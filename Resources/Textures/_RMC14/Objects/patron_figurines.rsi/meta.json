@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Characters created by their respective owners. Figurine base by DrSmugLeaf",
+  "size": {
+    "x": 32,
+    "y": 34
+  },
+  "states": [
+    {
+      "name": "Sasha_Afanasiia"
+    }
+  ]
+}
