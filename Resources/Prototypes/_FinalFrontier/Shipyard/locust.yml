@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+- type: vessel
+  id: Locust
+  parent: BaseVessel
+  name: DWI Locust
+  description: An extremely refitted DWI Firefly-S, barely meeting standards for medical.
+  price: 18500
+  category: medium
+  group: Medical
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/locust.yml
+  guidebookPage: Null
+  class:
+  - Medical
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Locust
+  mapName: 'DWI Locust'
+  mapPath: /Maps/_FinalFrontier/Shuttles/locust.yml
+  minPlayers: 0
+  stations:
+    Locust:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Locust MED{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            MdMedic: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

@@ -1,0 +1,29 @@
+# Final Frontier
+- type: entity
+  name: N2460 Repeating Rifle (.45 magnum)
+  parent: [ BaseWeaponSniper, BaseGunWieldable ]
+  id: WeaponHenryRepeater
+  description: An old repeating rifle, modernized for use on the final frontier. In the right hands, this thing is unstoppable. Uses .45 magnum ammo.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Rifles/henry_repeater.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Rifles/henry_repeater.rsi
+  - type: StaticPrice
+    price: 700
+    vendPrice: 12500
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - Cartridge45_magnumFMJ
+    capacity: 16
+    proto: Cartridge45_magnumFMJ
+    autoCycle: false
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+    projectileSpeed: 75 # Mono

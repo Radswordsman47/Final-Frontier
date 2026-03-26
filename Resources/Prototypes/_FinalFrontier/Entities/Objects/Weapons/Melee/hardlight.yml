@@ -1,0 +1,91 @@
+- type: entity
+  name: hard-light spear
+  parent: BaseMeleeWeaponEnergy
+  id: HardlightSpear
+  description: A heavy spear using a tip made of hardened light.
+  components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg
+      params:
+        volume: 3
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg
+      params:
+        volume: 3
+  - type: Tag
+    tags:
+    - Spear
+  - type: ThrowingAngle
+    angle: 225
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+            - -0.40,-0.30
+            - -0.30,-0.40
+            - 0.40,0.30
+            - 0.30,0.40
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: EnergySword
+    activatedColor: "#FFFFFF"
+    colorOptions: ["#FFFFFF"]
+    blockHacking: true
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        volume: 3
+        variation: 0.250
+    activatedDamage:
+      types:
+        Piercing: 15 # Mono increased from 10 to 15 to be on-par with normal e-swords
+        Heat: 20
+        Shock: 10
+        Structural: 150 # Mono increased from 25 to 75, keep in mind a breaching hammer does 300 a hit
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg
+      params:
+        volume: 3
+  - type: ComponentToggler
+    components:
+    - type: Sharp
+    - type: DisarmMalus
+      malus: 0.7
+    - type: Execution
+      doAfterDuration: 4.0
+  - type: Wieldable
+    wieldSound: null # esword light sound instead
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 25
+        Structural: 250
+  - type: MeleeWeapon
+    animation: WeaponArcThrust
+    wideAnimationRotation: -135
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 14
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Weapons/Melee/hardlight_spear.rsi
+    layers:
+    - state: e_sword_double
+    - state: e_sword_double_blade
+      color: "#FFFFFF"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+  - type: Item
+    size: Ginormous
+    sprite: _FinalFrontier/Objects/Weapons/Melee/hardlight_spear-inhands.rsi
+  - type: Reflect
+    reflectProb: .6
+    spread: 160

@@ -1,0 +1,59 @@
+- type: entity
+  parent: [ ClothingBeltBase, EnergyShieldClothing ]
+  id: ClothingBeltHardlightGenerator
+  name: hard-light shield generator
+  description: Emits a field of hardened light around the wearer upon activation.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Belt/hardlight_shield_generator.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Belt/hardlight_shield_generator.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    quickEquip: true
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 2
+    color: "#ED87E7FF"
+  - type: ToggleableClothing
+  - type: ComponentToggler
+    components:
+    - type: PressureProtection
+      highPressureMultiplier: 0.3
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coolingCoefficient: 0.1
+      heatingCoefficient: 0.4
+  - type: Blocking
+    activeColor: "#ED87E7FF"
+    colorOverride: true
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.75
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.75
+      flatReductions:
+        Shock: 5
+    passiveBlockFraction: 0.6
+    activeBlockFraction: 1.0
+    isClothing: true
+  - type: Battery
+    maxCharge: 15
+    startingCharge: 15
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.85 # Temporary till shield toggling doesnt break movement speed modifiers
+  - type: Damageable
+    damageContainer: Shield
+  - type: RechargeableBlocking

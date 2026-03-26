@@ -1,0 +1,41 @@
+
+# Recipes
+
+- type: latheRecipe
+  id: HardlightSpearRecipe
+  result: HardlightSpear
+  completetime: 10
+  materials:
+    Steel: 1000
+    Plasteel: 1800
+    FineComponent: 600
+    BasicComponent: 300
+    Gold: 500
+    Silver: 500
+    MonolithicShardMaterial: 400
+    
+- type: latheRecipe
+  id: HardlightShieldRecipe
+  result: HardlightShield
+  completetime: 10
+  materials:
+    Plasteel: 800
+    BasicComponent: 600
+    FineComponent: 800
+    Gold: 800
+    Silver: 800
+    MonolithicShardMaterial: 500
+    
+- type: latheRecipe
+  id: HardlightShieldGeneratorRecipe
+  result: ClothingBeltHardlightGenerator
+  completetime: 10
+  materials:
+    Steel: 2000
+    Plasteel: 1200
+    BasicComponent: 800
+    FineComponent: 1600
+    Gold: 1000
+    Silver: 1000
+    Glass: 500
+    MonolithicShardMaterial: 800

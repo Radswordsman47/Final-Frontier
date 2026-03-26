@@ -1,0 +1,80 @@
+- type: marking
+  id: AstrumBrandA
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandA
+    
+- type: marking
+  id: AstrumBrandB
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandB
+    
+- type: marking
+  id: AstrumBrandC
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandC
+    
+- type: marking
+  id: AstrumBrandD
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandD
+    
+- type: marking
+  id: AstrumBrandE
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandE
+    
+- type: marking
+  id: AstrumBrandF
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandF
+    
+- type: marking
+  id: AstrumBrandG
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandG
+    
+- type: marking
+  id: AstrumBrandH
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandH
+    
+- type: marking
+  id: AstrumBrandI
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Astrum]
+  sprites:
+  - sprite: _FinalFrontier/Mobs/Customization/brands.rsi
+    state: brandI

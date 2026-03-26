@@ -1,0 +1,109 @@
+# military alloy wall
+
+- type: entity
+  parent: WallPlastitaniumDiagonal
+  id: WallMilAlloyDiagonal
+  name: military alloy wall
+  suffix: diagonal
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.525,-0.525,0.525,0.525"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 9000 # No ram-meta
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _FinalFrontier/Structures/Walls/mwall_diagonal.rsi
+    state: state0
+    
+- type: entity
+  parent: [ BaseWallTierThree, WallPlastitanium ]
+  id: WallMilAlloy
+  name: military alloy wall
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.525,-0.525,0.525,0.525"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 9000 # No ram-meta
+  - type: Sprite
+    sprite: _FinalFrontier/Structures/Walls/mwall.rsi
+  - type: Icon
+    sprite: _FinalFrontier/Structures/Walls/mwall.rsi
+    
+- type: entity
+  id: WallMilAlloyDirectional
+  parent: BaseStructure
+  name: military alloy wall
+  description: Keeps the air in and the chimera out.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: WallMount
+    arc: 360 # interact despite grilles
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _FinalFrontier/Structures/Walls/mwall_directional.rsi
+    state: window
+  - type: Icon
+    sprite: _FinalFrontier/Structures/Walls/mwall_directional.rsi
+    state: window
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.3"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 9000 # No ram-meta
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
+    airBlockedDirection:
+    - South
+  - type: Appearance
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+  - type: ArmorThickness
+    thickness: 10
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2800
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 2800
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+

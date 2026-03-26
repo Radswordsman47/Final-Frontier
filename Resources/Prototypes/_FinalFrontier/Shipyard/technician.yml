@@ -1,0 +1,40 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Shuttle Notes: Pit crew.
+
+- type: vessel
+  id: Technician
+  parent: BaseVessel
+  name: DWI Technician
+  description: Dornan-Weryl Industrial's engineering "pit crew" vessel, underequipped and not meant to stick around too long but fast and cheap.
+  price: 28000
+  category: small
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/technician.yml
+  guidebookPage: Null
+  class:
+  - Engineering
+  engine:
+  - APU
+
+- type: gameMap
+  id: Technician
+  mapName: 'DWI Technician'
+  mapPath: /Maps/_FinalFrontier/Shuttles/technician.yml
+  minPlayers: 0
+  stations:
+    Technician:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Technician CIV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

@@ -1,0 +1,55 @@
+FINAL FRONTIER MANUFACTURING UPDATE (PHASE ONE?)
+
+DONE Caster - Gun components, misc machine components
+DONE AmmoPress - Munitions
+DONE GasCentrifuge - Fissile uranium, Enriched Monolithic crystals
+AutoSmith - Plate components, simple metal components
+
+DTC T22 Miniature Fission Reactor (MFR :3)
+
+Add misc. circuit components to imprinter
+Take ships that can't abide by manufacturing guidelines out of shipyard
+
+Manufacturing update machines will NOT be craftable. Some may have flatpacks, but none craftable. We will not have the generic everyman ship again.
+
+SHIP MANUFACTURING EQUIPMENT GUIDELINES
+
+GENERAL Merc ships may have access to the Ammo Press
+Gas Centrifuge is only to appear on dedicated manufacturing ships
+Autosmith & Caster can appear on manufacturing and general engineering ships
+Manufacturing ships are to have at the LEAST the Caster and Autosmith. Recommended to have the Ammo Press and Gas Centrifuge as well as the standard lathe collection
+T22 MFRs are to be placed in sealable chambers with full radiation shielding on all sides
+Manufacturing ships are not military ships. Only exception to this rule is if DuneTemplar himself made the ship that way.
+
+
+
+FINAL FRONTIER MANUFACTURING UPDATE PHASE 2
+
+Done:
+Hydrogen thrusters + hydrogen fuel tanks --CHECK
+Implement armored radsuit --CHECK
+Hard light technology (Tower Shield, Lance, Personal Shield Generator, etc??) --CHECK
+Component resprites --CHECK
+
+Major:
+Monolith reworks --HOLD
+Implement basic power armour --HOLD
+Clockwork munitions
+Brass, circuit components (Component variety)
+
+Minor:
+Make uranium ORE radioactive
+Make potassium iodide pills buyable on medical vendor
+
+Potential???:
+Bullet casings/gunpowder
+Implement definitely legally distinct GATE hazmat
+Larger caliber mounted HMG
+
+
+
+
+
+atmos colors dull
+#304E67 - distro
+#672323 - waste

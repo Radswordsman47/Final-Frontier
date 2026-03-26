@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "made by DuneTemplar",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "panel"
+    },
+    {
+      "name": "unshaded"
+    },
+    {
+      "name": "building",
+      "delays":
+	  [
+        [ 0.15, 0.15, 0.15, 0.15 ]
+      ]
+    },
+    {
+      "name": "building-unshaded",
+      "delays":
+	  [
+        [ 0.15, 0.15, 0.15, 0.15 ]
+      ]
+    },
+    {
+      "name": "inserting",
+      "delays":
+	  [
+        [ 0.15, 0.15, 0.15, 0.15 ]
+      ]
+    }
+  ]
+}

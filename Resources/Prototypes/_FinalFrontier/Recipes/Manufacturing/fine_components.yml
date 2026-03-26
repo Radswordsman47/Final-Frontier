@@ -1,0 +1,34 @@
+# Base prototypes
+
+- type: latheRecipe
+  abstract: true
+  id: BaseFineComponentRecipe
+  completetime: 60
+
+# Recipes
+
+- type: latheRecipe
+  parent: BaseFineComponentRecipe
+  id: FineGunComponent
+  result: FineComponentGun1
+  completetime: 60
+  materials:
+    Steel: 600
+    Plasteel: 400
+
+- type: latheRecipe
+  parent: BaseFineComponentRecipe
+  id: FineFineComponent
+  result: FineComponentFine1
+  completetime: 60
+  materials:
+    Steel: 600
+    Plasteel: 200
+    
+- type: latheRecipe
+  parent: BaseFineComponentRecipe
+  id: FineBasicComponent
+  result: FineComponentBasic1
+  completetime: 60
+  materials:
+    Steel: 500

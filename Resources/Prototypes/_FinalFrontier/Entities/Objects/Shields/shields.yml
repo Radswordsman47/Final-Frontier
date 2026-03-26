@@ -1,0 +1,91 @@
+- type: entity
+  name: hard-light shield
+  parent: BaseItem
+  id: HardlightShield
+  description: A shield of hardened light cast from a monolithic crystal.
+  components:
+    - type: ItemToggle
+      predictable: false # WD EDIT
+      soundActivate:
+        path: /Audio/_Goobstation/Weapons/EswordWelder/on.ogg
+      soundDeactivate:
+        path: /Audio/_Goobstation/Weapons/EswordWelder/off.ogg
+      # WD EDIT START
+      soundFailToActivate:
+        path: /Audio/Machines/button.ogg
+        params:
+          variation: 0.250
+      # WD EDIT END
+    - type: ItemToggleActiveSound
+      activeSound:
+        path: /Audio/_Goobstation/Weapons/EswordWelder/hum.ogg
+    - type: ItemToggleSize
+      activatedSize: Huge
+    - type: ComponentToggler
+      components:
+      - type: DisarmMalus
+        malus: 0.6
+    - type: Sprite
+      sprite: _FinalFrontier/Objects/Weapons/Melee/hardlight_shield.rsi
+      layers:
+        - state: eshield-icon
+        - state: eshield-on
+          color: "#FFFFFF"
+          visible: false
+          shader: unshaded
+          map: [ "shield" ]
+    - type: Item
+      size: Small
+      sprite: _FinalFrontier/Objects/Weapons/Melee/hardlight_shield.rsi
+      heldPrefix: eshield
+    - type: UseDelay
+      delay: 0.25
+    - type: ToggleableLightVisuals
+      spriteLayer: shield
+      inhandVisuals:
+        left:
+          - state: inhand-left-shield
+            shader: unshaded
+        right:
+          - state: inhand-right-shield
+            shader: unshaded
+    - type: PointLight
+      netsync: false
+      enabled: false
+      radius: 1.5
+      energy: 0.7 # WD EDIT
+      color: "#CF9FFF" # WD EDIT
+    - type: ItemTogglePointLight
+    - type: Reflect
+      reflectProb: 0.75 # WD EDIT
+      damageOnReflectModifier: 1 # Goob edit
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 1.0
+          Slash: 0.9
+          Piercing: 0.95
+          Heat: 0.75 # WD EDIT
+      activeBlockModifier:
+        coefficients:
+          Blunt: 1.0
+          Slash: 0.85
+          Piercing: 0.85
+          Heat: 0.5
+        flatReductions:
+          Heat: 1
+          Piercing: 1
+    - type: Appearance
+    - type: Damageable
+      damageContainer: Shield
+    - type: StaticPrice
+      price: 350
+      # WD EDIT START
+    - type: Battery
+      maxCharge: 160
+      startingCharge: 160
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 14
+    - type: RechargeableBlocking
+      # WD EDIT END

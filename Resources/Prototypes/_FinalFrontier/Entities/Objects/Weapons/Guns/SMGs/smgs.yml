@@ -1,0 +1,127 @@
+- type: entity
+  name: SOP M4 Montese SMG (9x19mm)
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
+  id: WeaponSubMachineGunMontese
+  description: An ancient Terran model, designed and previously used by an ancient militant order from times unrecorded. 
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Weapons/Guns/SMGs/montese.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _FinalFrontier/Objects/Weapons/Guns/SMGs/montese.rsi
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -47
+  - type: Gun
+    minAngle: 21
+    maxAngle: 62
+    angleIncrease: 6
+    angleDecay: 2
+    fireRate: 7.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine9x19mmSubMachineGunFMJ
+        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - Magazine9x19mmSubMachineGunFMJ
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge9x19mmFMJ
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge9x19mmFMJ
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  
+- type: entity
+  name: KR-M26 Raven (635x40mm/9x19mm/.45 ACP)
+  parent: [BaseWeaponRifle, BaseGunWieldable]
+  id: WeaponSubMachineGunRaven
+  description: An odd SMG with an inbuilt silencer, manufactured by Kolmer Rifleworks to be able to use whatever surplus munitions are laying around. Uses 6.35x40mm, 9x19 or .45 ACP ammo.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Weapons/Guns/SMGs/kr_m26.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: GunWieldBonus
+    minAngle: -17
+    maxAngle: -45
+  - type: Gun
+    minAngle: 18
+    maxAngle: 55
+    angleIncrease: 4
+    angleDecay: 2
+    fireRate: 6.5
+    projectileSpeed: 35 # Mono
+    selectedMode: Burst
+    availableModes:
+    - Burst
+    - FullAuto
+    - SemiAuto
+    burstCooldown: 0.75
+    burstFireRate: 8
+    shotsPerBurst: 4
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      params:
+        volume: -1
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine9x19mmSubMachineGunFMJ
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine635x40mmCaseless
+            - Magazine45_ACPSubMachineGunFMJ
+            - Magazine9x19mmSubMachineGunFMJ
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge9x19mmFMJ
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge635x40mmCaseless
+            - Cartridge45_ACPFMJ
+            - Cartridge9x19mmFMJ
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Clothing
+    sprite: _FinalFrontier/Objects/Weapons/Guns/SMGs/kr_m26.rsi
+  - type: StaticPrice
+    price: 22500
+    vendPrice: 27500

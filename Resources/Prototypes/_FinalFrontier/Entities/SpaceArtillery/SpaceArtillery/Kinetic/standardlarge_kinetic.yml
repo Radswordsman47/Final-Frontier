@@ -1,0 +1,207 @@
+
+# HK660 220mm
+
+- type: entity
+  id: WeaponTurretHK660
+  name: HK660 220mm cannon
+  parent: BallisticArtilleryUnanchorableCartridge
+  description: A rapid fire single barrel battery delivering constant damaging salvos at long range. Fires 220mm auto shells with reduced brute strength. Can be remotely activated or linked up to a GCS.
+  components:
+  - type: StaticPrice
+    price: 12500
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/ShuttleWeapons/hk660.rsi
+    layers:
+    - state: space_artillery
+    scale: 1, 1
+  - type: Appearance
+  - type: FireControlRotate
+  - type: AmmoCounter
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.6,-0.6,0.6,0.6"
+        density: 1500
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Gun
+    projectileSpeed: 300
+    minAngle: 0
+    maxAngle: 1
+    fireRate: 0.2
+    recoil: 75 # 4x
+    burstCooldown: 3
+    burstFireRate: 2
+    shotsPerBurst: 1
+    selectedMode: Burst
+    availableModes: Burst
+    shootThermalSignature: 48000000 # ~7km after firing
+    soundGunshot:
+      path: /Audio/_Mono/Weapons/Guns/Gunshots/cannon.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: SpaceArtillery
+    powerChargeRate: 12000
+    powerUsePassive: 1500
+    powerUseActive: 0
+  - type: Actions
+  - type: RadarBlip
+    radarColor: "#FF0000"
+    scale: 2
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: BallisticAmmoProvider
+    infiniteUnspawned: true
+    whitelist:
+      tags:
+      - 220mmCartridge
+    capacity: 24
+    proto: 220mmCartridge
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: ShipGunType
+    shipType: Ballistic
+  - type: ShipGunClass
+    shipClass: Medium
+    
+    
+# Minelayer
+
+- type: entity
+  id: WeaponTurretMinelayer
+  name: ASM-842 "Miros" mine layer
+  parent: BallisticArtilleryUnanchorableCartridge
+  description: A mine layer manufactured by Aetherion Dynamics. Deploys large naval mines for area denial. Uses a built-in autoloader. Can be remotely activated or linked to a GCS.
+  components:
+  - type: StaticPrice
+    price: 4000
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/ShuttleWeapons/minelayer.rsi
+    layers:
+    - state: space_artillery
+    scale: 1, 1
+  - type: Appearance
+  - type: FireControllable
+    addPhase: false
+  - type: FireControlRotate
+  - type: AmmoCounter
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: Gun
+    projectileSpeed: 20
+    fireRate: 0.8
+    recoil: 5
+    minAngle: 0
+    maxAngle: 0
+    shootThermalSignature: 8000000 # ~5km if firing continuously
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
+  - type: Actions
+  - type: SpaceArtillery
+    powerChargeRate: 350
+    powerUsePassive: 600
+    powerUseActive: 0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 9000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: BallisticAmmoProvider
+    infiniteUnspawned: false
+    whitelist:
+      tags:
+      - NavalMine
+    capacity: 1
+    proto: MinelayerCartridge
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: RadarBlip
+    radarColor: "#FCBA03"
+    scale: 1.5
+  - type: ShipGunType
+    shipType: Missile
+  - type: ShipGunClass
+    shipClass: Medium
+    
+- type: entity
+  id: MinelayerCartridge
+  name: unprimed naval mine
+  description: An individual mine used in the ASM-842
+  parent: BaseGrenade
+  components:
+  - type: Tag
+    tags:
+    - NavalMine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+  - type: MultiHandedItem
+  - type: Item
+    size: Ginormous
+  - type: CartridgeAmmo
+    proto: ShipMineBasic
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Ammunition/Explosives/mine.rsi
+    layers:
+    - state: standard
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:ExplodeBehavior
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 3
+    totalIntensity: 6
+  - type: ExplodeOnTrigger
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3  # fite me
+        friction: 0.2
+
+

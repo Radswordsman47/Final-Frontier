@@ -1,0 +1,196 @@
+- type: entity
+  name: steam engine
+  description: |-
+    An old steam engine, modernized to fit into modern spacecraft power grids. Runs off of coal, generating roughly 140 kW.
+  parent:
+  - StaticGeneratorBase
+  id: GeneratorSteamEngine
+  suffix: Coal, 140 kW
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Structures/Power/Generators/steamengine.rsi
+    offset: 1,-0.5
+    noRot: false
+    layers:
+    - state: steamengine
+      map: [ "enum.GeneratorVisualLayers.Body" ]
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: GenericVisualizer
+    visuals:
+      enum.GeneratorVisuals.Running:
+        enum.GeneratorVisualLayers.Body:
+          True: { state: steamengine_on }
+          False: { state: steamengine }
+  - type: FuelGenerator
+    minTargetPower: 50000
+    maxTargetPower: 160000
+    targetPower: 140000
+    optimalPower: 140000
+    optimalBurnRate: 0.09
+    fuelEfficiencyConstant: 0.95
+    radiationColor: "#662040"
+  - type: SolidFuelGeneratorAdapter
+    fuelMaterial: Coal
+    multiplier: 0.01
+  - type: MaterialStorage
+    materialWhiteList: [Coal]
+    storage:
+      Coal: 2500
+  - type: Anchorable
+    delay: 300
+  - type: PointLight
+    enabled: false
+    color: "#F6B26B" # beb color
+    radius: 6.0
+    energy: 1.5
+  - type: LitOnPowered
+  - type: PowerMonitoringDevice
+    group: Generator
+    loadNodes:
+    - output_hv
+    - output_mv
+  - type: GeneratorExhaustGas
+    gasType: WaterVapor
+    # 0.5 moles of gas for every sheet of plasma.
+    moleRatio: 3
+    sprite: _FinalFrontier/Structures/Power/Generators/steamengine.rsi
+    state: steamengine
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "2.25,0.25,-0.25,-1.25"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: AmbientSound
+    volume: 1
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: PowerSupplier
+    supplyRampRate: 10000
+    supplyRampTolerance: 3000
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      output_hv:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
+  - type: PowerSwitchable
+    examineText: power-switchable-generator-examine
+    switchText: power-switchable-generator-switched
+    cables:
+    - voltage: HV
+      node: output_hv
+      
+- type: entity
+  name: DTC T22 miniature fission reactor
+  description: |-
+    Manufactured by the Dunnmore Trade Conglomerate, this fission reactor was made available for widespread civillian use. Runs off of enriched uranium, generating roughly 200 kW.
+  parent:
+  - StaticGeneratorBase
+  - BaseGeneratorShuttle
+  id: GeneratorUraniumFission
+  suffix: Enriched Uranium, 200 kW
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Structures/Power/Generators/t22mfr.rsi
+    noRot: false
+    layers:
+    - state: portgen0
+      map: [ "enum.GeneratorVisualLayers.Body" ]
+    - state: portgen_on_unlit
+      map: [ "enum.GeneratorVisualLayers.Unlit" ]
+      shader: unshaded
+      visible: false
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: GenericVisualizer
+    visuals:
+      enum.GeneratorVisuals.Running:
+        enum.GeneratorVisualLayers.Body:
+          True: { state: portgen0on }
+          False: { state: portgen0 }
+        enum.GeneratorVisualLayers.Unlit:
+          True: { visible: true }
+          False: { visible: false }
+  - type: FuelGenerator
+    minTargetPower: 5000
+    maxTargetPower: 200000
+    targetPower: 200000
+    optimalPower: 200000
+    optimalBurnRate: 0.002
+    fuelEfficiencyConstant: 0.95
+    radiationColor: "#2CFA1F"
+  - type: SolidFuelGeneratorAdapter
+    fuelMaterial: EnrichedUranium
+    multiplier: 0.01
+  - type: MaterialStorage
+    materialWhiteList: [EnrichedUranium]
+    storage:
+      EnrichedUranium: 2500
+  - type: RadiationSource
+    enabled: false
+  - type: Anchorable
+    delay: 300
+  - type: PointLight
+    enabled: false
+    color: "#2CFA1F" # beb color
+    radius: 6.0
+    energy: 1.5
+  - type: LitOnPowered
+  - type: PowerMonitoringDevice
+    group: Generator
+    loadNodes:
+    - output_hv
+    - output_mv
+  - type: GeneratorExhaustGas
+    gasType: WaterVapor
+    # 0.5 moles of gas for every sheet of plasma.
+    moleRatio: 0.5
+    sprite: _FinalFrontier/Structures/Power/Generators/t22mfr.rsi
+    state: portgen0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: AmbientSound
+    volume: 1
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/engine_hum.ogg
+  - type: PowerSupplier
+    supplyRampRate: 10000
+    supplyRampTolerance: 3000
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      output_hv:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
+  - type: PowerSwitchable
+    examineText: power-switchable-generator-examine
+    switchText: power-switchable-generator-switched
+    cables:
+    - voltage: HV
+      node: output_hv

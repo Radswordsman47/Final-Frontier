@@ -1,0 +1,164 @@
+- type: entity
+  id: BaseAstrumOrganUnGibbable
+  parent: BaseItem
+  abstract: true
+  components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
+  # Goobstation edit end
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/organs.rsi
+  - type: Organ
+  - type: Food
+  #    quality: Nasty # Frontier
+  - type: Extractable
+    grindableSolutionName: organ
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - people
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  id: BaseAstrumOrgan
+  parent: BaseAstrumOrganUnGibbable
+  abstract: true
+  components:
+  - type: Gibbable
+
+- type: entity
+  id: OrganAstrumBrain
+  parent: BaseAstrumOrganUnGibbable
+  name: astrum core
+  description: "The core of an Astrum. Functionally, it acts at the eyes, brain, lungs, and heart of the Astrum."
+  components:
+  - type: MindContainer
+    showExamineInfo: true
+  - type: Speech
+    enabled: false
+  - type: TypingIndicator
+    proto: empty
+  - type: Emoting
+    enabled: false
+  - type: Sprite
+    shader: unshaded
+    state: brain
+  - type: Organ
+    slotId: brain # Shitmed Change
+  - type: Input
+    context: "ghost"
+  - type: Eyes
+  - type: Brain
+  - type: Lung
+  - type: Heart # Shitmed Change
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [Astrum]
+    groups:
+    - id: Medicine
+    - id: Cryogenic # Frontier
+    - id: Poison
+    - id: Narcotic
+  - type: InputMover
+  - type: Examiner
+  - type: BlockMovement
+  - type: BadFood
+  - type: Tag
+    tags:
+    - Meat
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - people
+  - type: FoodSequenceElement
+    entries:
+      Burger: Brain
+      Taco: Brain
+  - type: Item
+    size: Small
+    heldPrefix: brain
+
+- type: entity
+  id: OrganAstrumStomach
+  parent: BaseAstrumOrgan
+  name: astrum stomach
+  description: "More like a furnace."
+  components:
+  - type: Organ # Shitmed Change
+    slotId: stomach # Shitmed Change
+  - type: Sprite
+    state: stomach
+  - type: Item
+    size: Small
+    heldPrefix: stomach
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Stomach
+  # The stomach metabolizes stuff like foods and drinks.
+  # TODO: Have it work off of the ent's solution container, and move this
+  # to intestines instead.
+  - type: Metabolizer
+    # mm yummy
+    maxReagents: 3
+    metabolizerTypes: [Astrum]
+    groups:
+    - id: Food
+    - id: Drink
+
+- type: entity
+  id: OrganAstrumLiver
+  parent: BaseAstrumOrgan
+  name: astrum liver
+  description: "Of course they specifically have livers."
+  components:
+  - type: Liver # Shitmed Change
+  - type: Organ # Shitmed Change
+    slotId: liver # Shitmed Change
+  - type: Sprite
+    state: liver
+  - type: Item
+    size: Small
+    heldPrefix: liver
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [Astrum]
+    removeEmpty: true
+
+

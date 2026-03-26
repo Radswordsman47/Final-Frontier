@@ -1,0 +1,47 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckLegHolster
+  name: leg holster
+  description: Big iron on his... ankle.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Neck/Holsters/legholster.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Neck/Holsters/legholster.rsi
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-boots-sidearm
+        whitelist:
+          tags:
+          - Knife
+          - Sidearm
+          
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckArmHolster
+  name: arm holster
+  description: Big iron on his... arm.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Neck/Holsters/armholster.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Neck/Holsters/armholster.rsi
+    quickEquip: true
+    slots:
+    - neck
+    - ARMBANDLEFT
+    - ARMBANDRIGHT
+    clothingVisuals:
+      leftarmband:
+      - state: equipped-ARMBANDLEFT
+      rightarmband:
+      - state: equipped-ARMBANDRIGHT
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-boots-sidearm
+        whitelist:
+          tags:
+          - Knife
+          - Sidearm

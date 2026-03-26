@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-4.0",
+  "copyright": "Made by emisse (github) at commit https://github.com/space-wizards/space-station-14/commit/04792a47de4c87688915b9238e5384f518a540ce. Resprited by TheCrimsonJupiter (github) at commit https://github.com/ss14-harmony/ss14-harmony/commit/e7c900224de1c2c86a497988315cfdcbf6840c13. color by starch (github) at commit https://github.com/Monolith-Station/Monolith/commit/c8dd8e215af82c95d82861192d3f6c5ea3dc0794.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

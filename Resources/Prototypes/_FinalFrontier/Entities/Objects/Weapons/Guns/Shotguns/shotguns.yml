@@ -1,0 +1,32 @@
+- type: entity
+  name: KR14 Breacher (4 gauge)
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunBreacher
+  description: A bulky 4 gauge (23x75mm) shotgun produced by Kolmer Rifleworks that never hit the wider market. Commonly seen as an anti-boarding weapon nowadays.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Shotguns/kr14.rsi
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Shotguns/kr14.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Shotguns/kr14.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/bigshotgun_fire.ogg
+    #fireRate: 1 # Goobstation
+  - type: BallisticAmmoProvider # Goobstation
+    autoCycle: false
+    whitelist:
+      tags:
+      - ShellShotgun23x75mmBuckshot
+    capacity: 4
+    proto: ShellShotgun23x75mmBuckshot
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: StaticPrice
+    price: 25000
+    vendPrice: 30000

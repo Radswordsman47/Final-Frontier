@@ -1,0 +1,24 @@
+## Static
+
+- type: latheRecipePack
+  id: CasterRecipes
+  recipes:
+  - FineGunComponent
+  - FineFineComponent
+  
+- type: latheRecipePack
+  id: GasCentrifugeRecipes
+  recipes:
+  - EnrichedUraniumRecipe
+  
+- type: latheRecipePack
+  id: AutosmithRecipes
+  recipes:
+  - FineBasicComponent
+  
+- type: latheRecipePack
+  id: HardlightTech
+  recipes:
+  - HardlightSpearRecipe
+  - HardlightShieldRecipe
+  - HardlightShieldGeneratorRecipe

@@ -1,0 +1,84 @@
+# species
+- type: emoteSounds
+  id: MaleAstrum
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: MaleAstrumScreams
+    Laugh:
+      collection: MaleAstrumLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleAstrumCough
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleAstrumYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleAstrumSigh
+    Crying:
+      collection: MaleAstrumCry
+    Whistle:
+      collection: AstrumWhistles
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+
+- type: emoteSounds
+  id: FemaleAstrum
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: FemaleAstrumScreams
+    Laugh:
+      collection: FemaleAstrumLaugh
+    Sneeze:
+      collection: FemaleAstrumSneezes
+    Cough:
+      collection: FemaleAstrumCough
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: FemaleAstrumYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: CluwneHorn
+    Sigh:
+      collection: FemaleAstrumSigh
+    Crying:
+      collection: FemaleAstrumCry
+    Whistle:
+      collection: AstrumWhistles
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp

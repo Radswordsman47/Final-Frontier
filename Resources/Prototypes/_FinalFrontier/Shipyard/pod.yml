@@ -1,0 +1,40 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Shuttle Notes: Now this is pod racing.
+
+- type: vessel
+  id: Pod
+  parent: BaseVessel
+  name: NVS Pod
+  description: Now this is pod racing.
+  price: 25000
+  category: small
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/pod.yml
+  guidebookPage: Null
+  class:
+  - Engineering
+  engine:
+  - APU
+
+- type: gameMap
+  id: Pod
+  mapName: 'NVS Pod'
+  mapPath: /Maps/_FinalFrontier/Shuttles/pod.yml
+  minPlayers: 0
+  stations:
+    Pod:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Pod CIV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

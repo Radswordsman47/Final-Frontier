@@ -1,0 +1,34 @@
+- type: entity
+  name: LFD M55 Wessex (7.62x54mmR)
+  parent: [BaseWeaponSniper, BaseGunWieldable]
+  id: WeaponSniperWessex
+  description: A lightweight sniper rifle. Uses 762x54mmR ammo.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Snipers/lfd_m55.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Snipers/lfd_m55.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/hristov_fire_alt.ogg # harmony - changed audio path
+  - type: BallisticAmmoProvider
+    autoCycle: false
+    whitelist:
+      tags:
+      - Cartridge762x54mmRFMJ
+    capacity: 6
+    proto: Cartridge762x54mmRFMJ
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 7 # Mono - Sniper Buff
+    pvsIncrease: 0.7 # Mono - Sniper Buff
+  - type: StaticPrice # Mono
+    price: 1250

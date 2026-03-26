@@ -1,0 +1,25 @@
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskGasOrderTriarii
+  name: triarii gas mask
+  description: An ancient, advanced respirator used by an ancient militant order.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Mask/order.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Mask/order.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    hideOnToggle: true
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95 # Frontier 0.90<0.95
+        Slash: 0.95 # Frontier 0.90<0.95
+        Piercing: 0.95
+        Heat: 0.95

@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingHelmetCoverBase
+  id: ClothingHelmetCoverScrimNet
+  name: scrim net
+  description: A mesh fabric to be worn over helmets in order to conceal.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/HelmetCover/scrim_net.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/HelmetCover/scrim_net.rsi
+    clothingVisuals:
+      helmetcover:
+      - state: equipped-HELMETCOVER
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#2F2F2F"
+      right:
+      - state: inhand-right
+        color: "#2F2F2F"

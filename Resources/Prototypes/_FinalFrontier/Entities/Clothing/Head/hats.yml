@@ -1,0 +1,99 @@
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatBoonieWhite
+  name: white boonie hat
+  description: Only the most stylish headwear for this backwards sector.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Head/Hats/boonie.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Head/Hats/boonie.rsi
+
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatBoonieDesert
+  name: desert boonie hat
+  description: Only the most stylish headwear for this backwards sector.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Head/Hats/boonie.rsi
+    layers:
+    - state: icon
+      color: "#C19A6B"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C19A6B"
+      right:
+      - state: inhand-right
+        color: "#C19A6B"
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Head/Hats/boonie.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#C19A6B"
+        
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatBoonieForest
+  name: forest boonie hat
+  description: Only the most stylish headwear for this backwards sector.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Head/Hats/boonie.rsi
+    layers:
+    - state: icon
+      color: "#606958"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#606958"
+      right:
+      - state: inhand-right
+        color: "#606958"
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Head/Hats/boonie.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#606958"
+        
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatBoonieDark
+  name: dark boonie hat
+  description: Only the most stylish headwear for this backwards sector.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Head/Hats/boonie.rsi
+    layers:
+    - state: icon
+      color: "#222222"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#222222"
+      right:
+      - state: inhand-right
+        color: "#222222"
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Head/Hats/boonie.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#222222"
+        
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatJesterBalatro
+  name: jester hat
+  description: A jesters hat. You swear you feel an inexplicable urge to gamble whilst near it.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Head/Hats/jimbo.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Head/Hats/jimbo.rsi

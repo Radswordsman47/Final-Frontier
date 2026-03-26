@@ -1,0 +1,28 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+- type: pointOfInterest
+  id: ThePit
+  parent: BasePOI
+  name: "The Pit"
+  minimumDistance: 5200
+  maximumDistance: 6200
+  spawnGroup: Arena
+  gridPath: /Maps/_FinalFrontier/POI/pit.yml
+  addComponents:
+  - type: SolarPoweredGrid
+    trackOnInit: true
+    doNotCull: true
+
+- type: gameMap
+  id: ThePit
+  mapName: "The Pit"
+  mapPath: /Maps/_FinalFrontier/POI/pit.yml
+  minPlayers: 0
+  stations:
+    ThePit:
+      stationProto: DeadDropFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "The Pit"

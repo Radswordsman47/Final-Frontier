@@ -1,0 +1,238 @@
+- type: entity
+  id: ManufacturingAmmunitionPress
+  parent: [ BlueprintReceiverBase, BaseLatheLube ]
+  name: ammunition press
+  description: Allows for the creation of ammunition.
+  components:
+  - type: Machine
+    board: AmmunitionPressMachineCircuitboard
+  - type: NoDeconstruct
+  - type: Sprite
+    sprite: _FinalFrontier/Structures/Machines/ammunition_press.rsi
+    layers:
+    - state: icon
+    - state: building
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: building-unshaded
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    anchored: true
+  - type: RequireProjectileTarget
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - StaticAmmoRecipePack
+    - RoundstartShipgunAmmo # Mono
+    dynamicPacks:
+    - DynamicAmmoRecipePack
+    # Universal shit (stuff like shipgun ammo)
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalShellAmmo
+    - UniversalOrdinance
+    # Mono end
+  - type: PirateBountyItem # Mono
+    id: Techfab
+    
+- type: entity
+  id: ManufacturingAmmunitionPressIndustrial
+  parent: [ BlueprintReceiverBase, BaseLatheLube ]
+  name: industrialammunition press
+  description: Allows for the creation of ammunition.
+  components:
+  - type: Machine
+    board: IndustrialAmmunitionPressMachineCircuitboard
+  - type: NoDeconstruct
+  - type: Sprite
+    sprite: _FinalFrontier/Structures/Machines/industrial_ammunition_press.rsi
+    offset: 0,0.5
+    layers:
+    - state: icon
+    - state: building
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: building-unshaded
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+    flags: anchorable
+  - type: RequireProjectileTarget
+  - type: Lathe
+    idleState: icon
+    timeMultiplier: 0.5
+    materialUseMultiplier: 0.5
+    runningState: building
+    staticPacks:
+    - StaticAmmoRecipePack
+    - RoundstartShipgunAmmo # Mono
+    dynamicPacks:
+    - DynamicAmmoRecipePack
+    # Universal shit (stuff like shipgun ammo)
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalShellAmmo
+    - UniversalOrdinance
+    # Mono end
+  - type: PirateBountyItem # Mono
+    id: Techfab
+    
+- type: entity
+  id: ManufacturingCaster
+  parent: [ BlueprintReceiverBase, BaseLathe2x2 ]
+  name: metal caster
+  description: Allows for the production of more intricate metal components.
+  components:
+  - type: Machine
+    board: MetalCasterMachineCircuitboard
+  - type: NoDeconstruct
+  - type: Transform
+    anchored: true
+  - type: RequireProjectileTarget
+  - type: Anchorable
+    flags: anchorable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "1.25,0.25,-0.25,-1.25"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+  - type: Sprite
+    offset: 0.5,-0.5
+    sprite: _FinalFrontier/Structures/Machines/metal_caster.rsi
+    layers:
+    - state: icon
+    - state: building
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: building-unshaded
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - CasterRecipes
+    # Mono end
+  - type: PirateBountyItem # Mono
+    id: Techfab
+    
+- type: entity
+  id: ManufacturingGasCentrifuge
+  parent: [ BlueprintReceiverBase, BaseLatheLube ]
+  name: gas centrifuge
+  description: Used in the production of enriched materials. Spicy.
+  components:
+  - type: Machine
+    board: GasCentrifugeMachineCircuitboard
+  - type: NoDeconstruct
+  - type: Physics
+    bodyType: Static
+  - type: RequireProjectileTarget
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+    flags: anchorable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.6,-0.6,0.6,0.6"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+  - type: Sprite
+    offset: 0,-0
+    sprite: _FinalFrontier/Structures/Machines/gas_centrifuge.rsi
+    layers:
+    - state: icon
+    - state: building
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - GasCentrifugeRecipes
+    # Mono end
+  - type: PirateBountyItem # Mono
+    id: Techfab
+    
+- type: entity
+  id: ManufacturingAutosmith
+  parent: [ BlueprintReceiverBase, BaseLathe2x2 ]
+  name: auto smith
+  description: The blacksmith of the space age. Produces basic components and parts.
+  components:
+  - type: Machine
+    board: AutosmithMachineCircuitboard
+  - type: NoDeconstruct
+  - type: Transform
+    anchored: true
+  - type: RequireProjectileTarget
+  - type: Anchorable
+    flags: anchorable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "1.25,0.25,-0.25,-1.25"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+  - type: Sprite
+    offset: 0.5,-0.5
+    sprite: _FinalFrontier/Structures/Machines/autosmith.rsi
+    layers:
+    - state: icon
+    - state: building
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: building-unshaded
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - AutosmithRecipes
+    # Mono end
+  - type: PirateBountyItem # Mono
+    id: Techfab

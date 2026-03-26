@@ -1,0 +1,576 @@
+- type: entity
+  parent: [ ClothingOuterSuitRad ]
+  id: ClothingOuterSuitRadArmored
+  name: armored radiation suit
+  description: "A suit that protects against radiation. This one is outfitted with combat armor."
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/armored_radsuit.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.8
+        Slash: 0.6
+        Piercing: 0.6
+        Blunt: 0.8
+        Radiation: 0
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/armored_radsuit.rsi
+  - type: GroupExamine
+  - type: ToggleableClothing # Goobstation - Modsuits change
+    clothingPrototypes:
+      head: ClothingHeadHatHoodRadArmored
+  - type: Construction
+    graph: ArmoredRadsuit
+    node: armoredRadsuit
+  - type: ProtectedFromStepTriggers
+    slots: WITHOUT_POCKET
+    
+# Ordnance Platform
+    
+- type: entity
+  parent: NFClothingOuterEVASuitBase
+  id: ClothingOuterMobileOrdnance
+  name: GTM-98 mobile ordnance platform
+  description: The wall.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/mobile_ordnance.rsi
+    state: icon
+  - type: ClothingSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+  - type: HeldSpeedModifier
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeavySuit
+  - type: Pullable
+  - type: MultiHandedItem # Mono
+  - type: Item
+    size: Ginormous
+  - type: Gun
+    fireRate: 13
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    recoil: 1 # 1/5x
+    projectileSpeed: 80
+    maxAngle: 24 # Mono
+    minAngle: 3 # Mono
+    angleIncrease: 0.4 # Mono
+    angleDecay: 2 # Mono
+    shootThermalSignature: 5000
+    soundGunshot:
+      path: /Audio/_Mono/Weapons/Guns/Gunshots/slammer.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: AmmoCounter
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: AmmoBox762x39mmBigFMJ
+        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - Magazine762x39mmFMJ
+          - Magazine762x39mmBox
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge762x39mmFMJ
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge762x39mmFMJ
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/mobile_ordnance.rsi
+    state: equipped-OUTERCLOTHING
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head:  ClothingHeadMobileOrdnance
+  - type: Armor
+    modifiers:
+      coefficients: # Mono
+        Blunt: 0.25
+        Slash: 0.25
+        Piercing: 0.2
+        Heat: 0.3
+        Caustic: 0.5
+        Shock: 0.5
+        Radiation: 0
+        
+        
+- type: entity
+  parent: [ ClothingHeadHardsuitBase ]
+  id: ClothingHeadMobileOrdnance
+  name: GTM-98 mobile ordnance platform helmet
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/mobile_ordnance.rsi/mobile_ordnance_helm.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/mobile_ordnance.rsi/mobile_ordnance_helm.rsi
+    state: equipped-HELMET
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        
+# DWI12 Paladin
+        
+- type: entity
+  parent: ClothingOuterHardsuitBaseNF
+  id: ClothingOuterHardsuitDWIPaladin
+  name: DWI-12 paladin hardsuit
+  description: A robust, yet cheap hardsuit manufactured by Dornan-Weryl Industrial for private security and mercenary usage.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/paladin.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/paladin.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.25
+  - type: Armor
+    modifiers:
+      coefficients: 
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.4
+        Heat: 0.25
+        Radiation: 0.10
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.65
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing 
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitDWIPaladin
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: PirateBountyItem 
+    id: ClothingOuterHardsuitTacsuit
+  - type: StaminaDamageResistance
+    coefficient: 0.65
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitDWIPaladin
+  categories: [ HideSpawnMenu ]
+  name: DWI-12 paladin hardsuit helmet
+  description: Robust brain bucket, complete with barely transparent visor.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/paladin.rsi/paladin_helm.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/paladin.rsi/paladin_helm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        
+# DWI15X Stenbryder
+        
+- type: entity
+  parent: ClothingOuterHardsuitBaseNF
+  id: ClothingOuterHardsuitDWIStenbryder
+  name: DWI-15X stenbryder hardsuit
+  description: A heavy industrial hardsuit manufactured by Dornan-Weryl Industrial, suspiciously capable in combat.
+  components:
+  - type: ToggleableLightVisuals
+  - type: PointLight
+    enabled: false
+    color: "#ffff00"
+    radius: 12 # 3->4 Mono
+    energy: 6 # 2->3 Mono
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: false
+  - type: Appearance
+  - type: HandheldLight
+    addPrefix: true
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: Battery
+    maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
+    startingCharge: 600
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/stenbryder.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/stenbryder.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients: 
+        Blunt: 0.3
+        Slash: 0.4
+        Piercing: 0.65
+        Heat: 0.1
+        Radiation: 0
+        Shock: 0.5
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.6
+    sprintModifier: 0.5
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing 
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitDWIStenbryder
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: PirateBountyItem 
+    id: ClothingOuterHardsuitTacsuit
+  - type: StaminaDamageResistance
+    coefficient: 0.5
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitDWIStenbryder
+  categories: [ HideSpawnMenu ]
+  name: DWI-15X stenbryder hardsuit helmet
+  description: A light helmet for a heavy suit, near opaque visor included.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/stenbryder.rsi/stenbryder_helm.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/stenbryder.rsi/stenbryder_helm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+# DWI9 Kvotemaker
+        
+- type: entity
+  parent: ClothingOuterHardsuitBaseNF
+  id: ClothingOuterHardsuitDWICompany
+  name: DWI-9 kvotemaker EVA suit
+  description: A thinly armored, nimble EVA suit designed by Dornan-Weryl Industrial to be cheap and easy to make.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/company.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/company.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+  - type: Armor
+    modifiers:
+      coefficients: 
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.65
+        Radiation: 0.05
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing 
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitDWICompany
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: PirateBountyItem 
+    id: ClothingOuterHardsuitTacsuit
+  - type: StaminaDamageResistance
+    coefficient: 0.75
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitDWICompany
+  categories: [ HideSpawnMenu ]
+  name: DWI-9 kvotemaker EVA suit helmet
+  description: The one mostly metal part of the Kvotemaker.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/company.rsi/company_helm.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/company.rsi/company_helm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        
+# GL11 "Hemolysis"
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase]
+  id: ClothingOuterHardsuitHemolysis
+  name: GL-11 "Hemolysis" hardsuit
+  description: A light, armored hardsuit designed at some point after the collapse of the Syndicate. Property of whatever remained of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/gl11.rsi
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/gl11.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.5
+        Heat: 0.35
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head: ClothingHeadHelmetHardsuitHemolysis
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: Tag
+    tags:
+    - MonkeyWearable
+    - Hardsuit
+    - WhitelistChameleon
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.5
+    
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitHemolysis
+  name: GL-11 "Hemolysis" hardsuit helmet
+  description: A light, armored hardsuit helmet designed at some point after the collapse of the Syndicate. Property of whatever remained of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/gl11.rsi/gl11_helm.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/gl11.rsi/gl11_helm.rsi
+  - type: PointLight
+    radius: 12 # Mono
+    color: green
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        
+# Kolmer Engineer
+        
+- type: entity
+  parent: ClothingOuterHardsuitBaseNF
+  id: ClothingOuterHardsuitKolmerEngineer
+  name: KR engineer hardsuit
+  description: A hardsuit manufactured by Kolmer Rifleworks, complete with platemail and in-built welding visor.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/kolmer_engi.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/kolmer_engi.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+  - type: Armor
+    modifiers:
+      coefficients: 
+        Blunt: 0.7
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.5
+        Radiation: 0.01
+        Caustic: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ToggleableClothing 
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitKolmerEngineer
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: PirateBountyItem 
+    id: ClothingOuterHardsuitTacsuit
+  - type: StaminaDamageResistance
+    coefficient: 0.8
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitKolmerEngineer
+  categories: [ HideSpawnMenu ]
+  name: KR engineer hardsuit helmet
+  description: The large, welding mask-like helmet of the KR engineer hardsuit.
+  components:
+  - type: BreathMask
+  - type: FlashImmunity
+  - type: IdentityBlocker
+  - type: EyeProtection
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/kolmer_engi.rsi/kolmer_engi_helm.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/kolmer_engi.rsi/kolmer_engi_helm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        
+# Kolmer Light Assault
+        
+- type: entity
+  parent: ClothingOuterHardsuitBaseNF
+  id: ClothingOuterHardsuitKolmerLight
+  name: KR-O light assault hardsuit
+  description: A hardsuit manufactured by Kolmer Rifleworks for combat, lightweight but light armor.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/kolmer_light.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/kolmer_light.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+  - type: Armor
+    modifiers:
+      coefficients: 
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.7
+        Heat: 0.7
+        Radiation: 0.5
+        Caustic: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: ToggleableClothing 
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitKolmerLight
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: PirateBountyItem 
+    id: ClothingOuterHardsuitTacsuit
+  - type: StaminaDamageResistance
+    coefficient: 0.8
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitKolmerLight
+  categories: [ HideSpawnMenu ]
+  name: KR-O light assault hardsuit helmet
+  description: The solid metal helm of the KR-O light assault hardsuit.
+  components:
+  - type: BreathMask
+  - type: FlashImmunity
+  - type: IdentityBlocker
+  - type: NightVision
+    flashDurationMultiplier: 0.85
+    isEquipment: true
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/kolmer_light.rsi/kolmer_light_helm.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/kolmer_light.rsi/kolmer_light_helm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9

@@ -1,0 +1,86 @@
+- type: entity
+  id: MetalCasterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: metal caster machine board
+  description: A machine printed circuit board for a metal caster.
+  components:
+    - type: MachineBoard
+      prototype: ManufacturingCaster
+      requirements: # Frontier
+        MatterBin: 4 # Frontier stackRequirements<requirements
+        Manipulator: 3 # Frontier stackRequirements<requirements
+      stackRequirements:
+        Steel: 30
+        Plasteel: 15
+        
+- type: entity
+  id: AmmunitionPressMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: ammunition press machine board
+  description: A machine printed circuit board for an ammunition press.
+  components:
+    - type: MachineBoard
+      prototype: ManufacturingAmmunitionPress
+      requirements: # Frontier
+        MatterBin: 1 # Frontier stackRequirements<requirements
+        Manipulator: 2 # Frontier stackRequirements<requirements
+      stackRequirements:
+        Steel: 10
+        
+- type: entity
+  id: IndustrialAmmunitionPressMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: industrial ammunition press machine board
+  description: A machine printed circuit board for an industrial ammunition press.
+  components:
+    - type: MachineBoard
+      prototype: ManufacturingAmmunitionPressIndustrial
+      requirements: # Frontier
+        MatterBin: 4 # Frontier stackRequirements<requirements
+        Manipulator: 3 # Frontier stackRequirements<requirements
+      stackRequirements:
+        Steel: 30
+        Plasteel: 30
+        
+- type: entity
+  id: GasCentrifugeMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: gas centrifuge machine board
+  description: A machine printed circuit board for a gas centrifuge.
+  components:
+    - type: MachineBoard
+      prototype: ManufacturingGasCentrifuge
+      requirements: # Frontier
+        MatterBin: 3 # Frontier stackRequirements<requirements
+        Manipulator: 3 # Frontier stackRequirements<requirements
+      stackRequirements:
+        Plasteel: 30
+        Glass: 10
+        
+- type: entity
+  id: AutosmithMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: autosmith machine board
+  description: A machine printed circuit board for an autosmith.
+  components:
+    - type: MachineBoard
+      prototype: ManufacturingAutosmith
+      requirements: # Frontier
+        MatterBin: 4 # Frontier stackRequirements<requirements
+        Manipulator: 3 # Frontier stackRequirements<requirements
+      stackRequirements:
+        Steel: 30
+        Plasteel: 15
+        
+- type: entity
+  id: ThrusterHydrogenMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: hydrogen thruster machine board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterHydrogen
+    requirements: # Frontier
+      Capacitor: 4 # Frontier stackRequirements<requirements
+    stackRequirements:
+      Steel: 5
+        

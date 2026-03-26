@@ -1,0 +1,35 @@
+- type: vessel
+  id: Callisto
+  parent: BaseVesselAntag
+  name: PDV Callisto
+  description: Equipped with two rapid fire 220mm cannons in the front, and a mine layer in the back. Slow, and not meant to engage threats itself, but with the ability to lay out minefields.
+  price: 92000
+  category: Medium
+  group: BlackMarket
+  access: Pirate
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/BlackMarket/callisto.yml
+  guidebookPage: Null
+  class:
+  - Pirate
+  - Corvette
+  engine:
+  - AME
+
+- type: gameMap
+  id: Callisto
+  mapName: 'PDV Callisto'
+  mapPath: /Maps/_FinalFrontier/Shuttles/BlackMarket/callisto.yml
+  minPlayers: 0
+  stations:
+    Callisto:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Callisto PDV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Pirate: [ 0, 0 ]
+            PdvBorg: [ 0, 0 ]

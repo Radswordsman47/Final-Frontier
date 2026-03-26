@@ -1,0 +1,6 @@
+- type: currency
+  id: CoalitionMilitaryCredit
+  displayName: store-currency-display-coalition-telecrystal
+  cash:
+    1: CoalitionMilitaryCredit1
+  canWithdraw: true

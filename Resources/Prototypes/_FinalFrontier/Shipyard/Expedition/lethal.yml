@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+- type: vessel
+  id: Lethal
+  parent: BaseVessel
+  name: DWI Lethal
+  description: An extremely cheap dropship made by Dornan-Weryl Industrial for their lowest workers. Expedition capable.
+  price: 32000
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/Expedition/lethal.yml
+  guidebookPage: null
+  class:
+  - Expedition
+  - Salvage
+  engine:
+  - APU
+
+- type: gameMap
+  id: Lethal
+  mapName: 'DWI Lethal'
+  mapPath: /Maps/_FinalFrontier/Shuttles/Expedition/lethal.yml
+  minPlayers: 0
+  stations:
+    Lethal:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Lethal EXP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

@@ -1,0 +1,17 @@
+# Base prototypes
+
+- type: latheRecipe
+  abstract: true
+  id: BaseEnrichedRecipe
+  completetime: 60
+
+# Recipes
+
+# Vim
+- type: latheRecipe
+  parent: BaseEnrichedRecipe
+  id: EnrichedUraniumRecipe
+  result: EnrichedUraniumMaterial1
+  completetime: 60
+  materials:
+    Uranium: 12500

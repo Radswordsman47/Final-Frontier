@@ -1,0 +1,41 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Steinhardt
+  parent: BaseVessel
+  name: DWI Steinhardt
+  description: An expedition ship equipped with 2 mech bays and a large pressurized cargo bay.
+  price: 96000
+  category: Large
+  group: Expedition
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/Expedition/steinhardt.yml
+  guidebookPage: null
+  class:
+  - Expedition
+  - Salvage
+  engine:
+  - AME
+
+- type: gameMap
+  id: Steinhardt
+  mapName: 'DWI Steinhardt'
+  mapPath: /Maps/_FinalFrontier/Shuttles/Expedition/steinhardt.yml
+  minPlayers: 0
+  stations:
+    Steinhardt:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Steinhardt EXP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

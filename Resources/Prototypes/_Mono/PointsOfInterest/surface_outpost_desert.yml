@@ -1,0 +1,49 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Maintainer Info
+# GitHub: ???
+# Discord: ???
+
+# Notes:
+# mos eisley???
+- type: pointOfInterest
+  id: SurfaceOutpost
+  parent: BasePOI
+  name: 'Planetary Settlement'
+  minimumDistance: 1
+  maximumDistance: 500
+  spawnGroup: Planetary
+  gridPath: /Maps/_Mono/POI/surface_outpost_desert.yml
+  addComponents:
+  - type: IFF
+    color: "#00b7eb"
+
+- type: gameMap
+  id: SurfaceOutpost
+  mapName: 'Planetary Settlement'
+  mapPath: /Maps/_Mono/POI/surface_outpost_desert.yml
+  minPlayers: 0
+  stations:
+    SurfaceOutpost:
+      stationProto: RecordsFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Planetary Settlement'
+        - type: ExtraStationInformation
+          iconPath: /Textures/_NF/Markers/jobs.rsi/medic.png
+          stationSubtext: 'finalfrontier-lobby-planet-subtext'
+          stationDescription: 'finalfrontier-lobby-planet-description'
+          lobbySortOrder: 4
+        - type: StationJobs
+          availableJobs:
+            MdMedic: [ -1, -1 ] # mono
+            Pilot: [ -1, -1 ]
+            Contractor: [ -1, -1 ]
+            Mercenary: [ -1, -1 ]
+          tags:
+          - HeadOfPersonnel
+          - HeadOfSecurity
+        - type: StationDeadDrop
+          maxDeadDrops: 3 # NAH, ALL IN

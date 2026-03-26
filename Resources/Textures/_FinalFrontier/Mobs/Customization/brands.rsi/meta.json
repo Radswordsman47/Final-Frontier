@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "dunetemplar",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "brandA",
+      "directions": 4
+    },
+	{
+      "name": "brandB",
+      "directions": 4
+    },
+	{
+      "name": "brandC",
+      "directions": 4
+    },
+	{
+      "name": "brandD",
+      "directions": 4
+    },
+	{
+      "name": "brandE",
+      "directions": 4
+    },
+	{
+      "name": "brandF",
+      "directions": 4
+    },
+	{
+      "name": "brandG",
+      "directions": 4
+    },
+	{
+      "name": "brandH",
+      "directions": 4
+    },
+	{
+      "name": "brandI",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+marking-AstrumBrandA = Brand
+marking-AstrumBrandB = Brand
+marking-AstrumBrandC = Brand
+marking-AstrumBrandD = Brand
+marking-AstrumBrandE = Brand
+marking-AstrumBrandF = Brand
+marking-AstrumBrandG = Brand
+marking-AstrumBrandH = Brand
+marking-AstrumBrandI = Brand

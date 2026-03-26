@@ -1,0 +1,38 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+- type: vessel
+  id: Taurus
+  parent: BaseVessel
+  name: DTC Taurus
+  description: A large vessel dedicated to study of anomalous energies.
+  price: 95000
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/taurus.yml
+  class:
+  - Science
+  
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Taurus
+  mapName: 'DTC Taurus'
+  mapPath: /Maps/_FinalFrontier/Shuttles/taurus.yml
+  minPlayers: 0
+  stations:
+    Taurus:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Taurus CIV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

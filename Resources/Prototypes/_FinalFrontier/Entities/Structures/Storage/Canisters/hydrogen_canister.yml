@@ -1,0 +1,91 @@
+- type: entity
+  parent: BaseStructureDynamic
+  id: GasShipTank
+  name: gas tank
+  description: A large fuel tank that can contain any type of gas.
+  components:
+    - type: Animateable
+    - type: Anchorable
+      flags: anchorable
+    - type: InteractionOutline
+    - type: Transform
+      anchored: true
+    - type: Sprite
+      sprite: _FinalFrontier/Structures/Storage/gas_tank.rsi
+      offset: 0.5,0
+      state: box_0
+    - type: Appearance
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 700
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 500
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:DumpCanisterBehavior
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "1.4,0.4,-0.4,-0.4"
+          density: 190
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+    - type: AtmosDevice
+      requireAnchored: false
+      joinSystem: true
+    - type: NodeContainer
+      nodes:
+        port:
+          !type:PortablePipeNode
+          nodeGroupID: Pipe
+          rotationsEnabled: false
+          volume: 1
+    - type: GasCanister
+      noPort: true
+      gasMixture:
+        volume: 8000
+        moles:
+        - 0 # oxygen
+        - 0 # nitrogen
+        - 0 # CO2
+        - 0 # Plasma
+        - 0 # Tritium
+        - 0 #  Water vapor
+        - 0 # Miasma
+        - 0 # N2O
+        - 0 # Frezon
+        - 0 # BZ
+        - 0 # Healium
+        - 0 # Nitrium
+        - 0 # Pluoxium
+        - 14769.92 # Hydrogen
+        temperature: 293.15
+    - type: StaticPrice
+      price: 125
+    - type: GuideHelp
+      guides:
+      - GasCanisters
+    - type: Climbable
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepHull
+

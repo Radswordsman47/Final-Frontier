@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by DuneTemplar for Final Frontier.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "guncomp-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "guncomp-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "guncomp_3"
+    },
+    {
+      "name": "guncomp"
+    },
+    {
+      "name": "guncomp_2"
+    }
+  ]
+}

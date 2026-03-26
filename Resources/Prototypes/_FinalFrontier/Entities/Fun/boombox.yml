@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseItem
+  id: BasicBoombox
+  name: boombox
+  description: You're gonna get shot for blasting shitty music.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Fun/boombox.rsi
+    layers:
+    - state: "icon"
+      map: ["enum.JukeboxVisualLayers.Base"]
+  - type: Item
+    sprite: _FinalFrontier/Objects/Fun/boombox.rsi
+  - type: Jukebox
+    onState: icon
+    offState: icon
+    selectState: select
+  - type: ActivatableUI
+    key: enum.JukeboxUiKey.Key
+  - type: UserInterface
+    interfaces:
+        enum.JukeboxUiKey.Key:
+          type: JukeboxBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface

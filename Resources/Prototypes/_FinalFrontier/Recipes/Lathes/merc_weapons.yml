@@ -1,0 +1,54 @@
+- type: latheRecipe
+  id: WeaponSubMachineGunMontese
+  parent: BaseWeaponRecipeLong
+  result: WeaponSubMachineGunMontese
+  categories:
+  - SMGs
+  - Ballistic
+  - Weapons
+  materials:
+    Steel: 1500
+    Plasteel: 1200
+    Plastic: 1500
+    GunComponent: 500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponSniperWessex
+  result: WeaponSniperWessex
+  categories:
+  - Rifles
+  - Ballistic
+  - Weapons
+  materials:
+    Steel: 2500
+    Plasteel: 1500
+    Plastic: 500
+    GunComponent: 500
+    
+- type: latheRecipe
+  id: WeaponSubMachineGunRaven
+  parent: BaseWeaponRecipeLong
+  result: WeaponSubMachineGunRaven
+  categories:
+  - SMGs
+  - Ballistic
+  - Weapons
+  materials:
+    Steel: 3500
+    Plastic: 1500
+    GunComponent: 500
+    
+- type: latheRecipe
+  id: WeaponShotgunBreacher
+  parent: BaseWeaponRecipeLong
+  result: WeaponShotgunBreacher
+  categories:
+  - Shotguns
+  - Ballistic
+  - Weapons
+  materials:
+    Steel: 2500
+    Plastic: 1500
+    GunComponent: 250
+    

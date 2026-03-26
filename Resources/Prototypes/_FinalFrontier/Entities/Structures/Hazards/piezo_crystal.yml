@@ -1,0 +1,35 @@
+- type: entity
+  id: CrystalPiezo
+  parent: CrystalBlue
+  name: piezo crystal
+  suffix: blue
+  components:
+    - type: Sprite
+      color: "#a3d3ff"
+    - type: PointLight
+      radius: 2
+      energy: 4
+      color: "#a3d3ff"
+    - type: Stealth
+      lastVisibility: 0.75
+      maxVisibility: 0.75
+      minVisibility: 0.75
+    - type: LightningArcShooter
+    - type: Electrified
+      requirePower: false
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 200
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: GlassBreak
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                ShardCrystalBlue:
+                  min: 1
+                  max: 2

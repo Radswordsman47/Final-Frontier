@@ -1,0 +1,571 @@
+#Mercenary Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitBaseNF
+  id: ClothingOuterHardsuitMercenary # stats are of luxury mining hardsuit
+  name: mercenary hardsuit
+  description: A special suit that protects from the danger of space, employed by mercenary forces. Certified to be blunderbuss-resistant.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/mercenary.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/mercenary.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5 # Removed 10%
+  - type: Armor
+    modifiers:
+      coefficients: # Buffed to be more durable
+        Blunt: 0.65 #0.75->0.65
+        Slash: 0.6 #0.75->0.6
+        Piercing: 0.65 #0.75->0.65
+        Heat: 0.7 #0.80->0.7
+        Radiation: 0.75 # 0.6->0.75
+        Caustic: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75 # 0.8->0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitMercenary
+  - type: PirateBountyItem # Mono
+    id: ClothingOuterHardsuitTacsuit
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.65
+
+- type: entity
+  parent: ClothingOuterHardsuitMercenary
+  id: ClothingOuterHardsuitPrivateSecurity # stats are of merc hardsuit
+  name: private security hardsuit
+  description: A special suit that protects from the danger of space, employed by private security forces.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/private_security.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/private_security.rsi
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitPrivateSecurity
+
+# Pilot Hardsuit - Spationaut stats
+- type: entity
+  parent: ClothingOuterHardsuitBaseNF
+  id: ClothingOuterHardsuitPilot
+  name: pilot hardsuit
+  description: A hardsuit tailored for someone who spends the majority of their time buckled to a chair.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/pilot.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/pilot.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Radiation: 0.6
+        Caustic: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85 # Mono edit 0.9 -> 0.95
+    sprintModifier: 0.85 # Mono edit 0.9 -> 0.95
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitPilot
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.6
+
+#ERT Mail Carrier Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitCBURN
+  id: ClothingOuterHardsuitERTMailCarrier
+  name: ERT mail carrier's hardsuit
+  description: A protective hardsuit worn by the mail carriers of an emergency response team.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/ERTSuits/ertmailcarrier.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/ERTSuits/ertmailcarrier.rsi
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitERTMailCarrier
+
+# MAXIM Nerfed: used best stats from spationaut, mining and luxury hardsuits, additionally increased caustic resistance
+- type: entity
+  parent: ClothingOuterHardsuitMaxim
+  id: ClothingOuterHardsuitMaximPrototype
+  name: experimental salvager hardsuit
+  description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/maxim_prototype.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/maxim_prototype.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.4 # 10% increase
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6 # Mono - 0.7 -> 0.6
+        Slash: 0.6 # Mono - 0.7 -> 0.6
+        Piercing: 0.65 # Mono - 0.5->0.65
+        Heat: 0.8
+        Radiation: 0.3
+        Caustic: 0.5
+        Poison: 0.4 # Mono - Injection protection.
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85 #0.8->0.95
+    sprintModifier: 0.85 # 0.9 -> 0.95
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitMaximPrototype
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.45
+
+# Syndicate NPC hard suit, unremoveable
+- type: entity
+  parent:
+  - ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitSyndieEliteUnremoveable
+  name: syndicate hardsuit
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Unremoveable
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+
+- type: entity
+  parent:
+  - ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitSyndieBloodRedUnremoveable
+  name: syndicate hardsuit
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Unremoveable
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+
+# Security
+- type: entity
+  parent: ClothingOuterHardsuitBaseNFNfsd
+  id: ClothingOuterHardsuitNfsdBronze
+  name: TSFMC M73 tacsuit
+  suffix: DEPRECATED, DO NOT MAP
+  description: The standard-issue TSFMC tacsuit for patrol duty. This bronze variant has private rank markings.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_bronze.rsi # Mono
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_bronze.rsi # Mono
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitNfsdBronze
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor # Mono - Armor Value Changes
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.45
+        Piercing: 0.45
+        Heat: 0.45
+        Radiation: 0.5
+        Caustic: 0.55
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.5
+
+- type: entity
+  parent: ClothingOuterHardsuitNfsdBronze
+  id: ClothingOuterHardsuitNfsdSilver
+  name: TSFMC M73 tacsuit
+  suffix: DEPRECATED, DO NOT MAP
+  description: The standard-issue TSFMC tacsuit for patrol duty. This silver variant has corporal rank markings.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_silver.rsi # Mono
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_silver.rsi # Mono
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitNfsdSilver
+
+- type: entity
+  parent: ClothingOuterHardsuitNfsdBronze
+  id: ClothingOuterHardsuitNfsdGold
+  name: TSFMC M73 tacsuit
+  suffix: DEPRECATED, DO NOT MAP
+  description: The standard-issue TSFMC tacsuit for patrol duty. This gold variant has senior rank markings.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_gold.rsi # Mono
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_gold.rsi # Mono
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitNfsdGold
+
+- type: entity
+  parent: ClothingOuterHardsuitBaseNFNfsd
+  id: ClothingOuterHardsuitNfsdSheriff
+  name: TSFMC M92 colonel tacsuit
+  description: A heavy, gilded tacsuit, capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_colonel.rsi # Mono
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_colonel.rsi # Mono
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitNfsdSheriff
+  - type: FireProtection # Mono
+    reduction: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor # Mono - Armor Value Changes
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.45
+        Radiation: 0.4
+        Caustic: 0.5
+        Poison: 0.8 # Mono
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.35
+  - type: PirateBountyItem # Mono
+    id: ClothingOuterHardsuitTacsuitHighValue
+
+- type: entity
+  parent: ClothingOuterHardsuitNfsdBronze
+  id: ClothingOuterHardsuitNfsdBrigmedic
+  name: TSFMC M73-M tacsuit
+  suffix: DEPRECATED, DO NOT MAP
+  description: A variant of the M73 tacsuit for combat medical and NBC use. Provides greater caustic and radiation protection.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_brigmed.rsi # Mono
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_brigmed.rsi # Mono
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitNfsdBrigmedic
+  - type: Armor # Mono - Armor Value Changes
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.6
+        Radiation: 0.35
+        Caustic: 0.35
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.93
+    sprintModifier: 0.93
+
+- type: entity
+  parent: [ClothingOuterHardsuitJuggernaut, EnergyShieldClothing ] # Jugger Suit
+  id: ClothingOuterHardsuitNfsdExperimental
+  name: TSFMC M92-X tacsuit
+  description: An experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Durable, and comes with an integrated soft-shield, but at the cost of insulation and heft.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_experimental.rsi # Mono
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_experimental.rsi # Mono
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitNfsdExperimental
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: FireProtection # Mono
+    reduction: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor # Mono - Armor Value Changes
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.7
+        Radiation: 0.5
+        Caustic: 0.8
+        Poison: 0.8 # Mono
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.6
+    sprintModifier: 0.6
+  - type: FactionClothing
+    faction: NanoTrasen
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.25
+  - type: PirateBountyItem # Mono
+    id: ClothingOuterHardsuitTacsuitHighValue
+  # Mono - Shielding comps
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+      flatReductions:
+        Heat: 5
+        Piercing: 5
+    passiveBlockFraction: 0.8
+    activeBlockFraction: 0.8
+    isClothing: true
+  - type: Damageable
+    damageContainer: Shield
+  - type: Battery
+    maxCharge: 100
+    startingCharge: 100
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+  - type: RechargeableBlocking
+  - type: UseDelay
+    delay: 20
+
+
+#Security Combat Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitBaseNFNfsd
+  id: ClothingOuterHardsuitNfsdCombat
+  name: TSFMC M93 tacsuit
+  suffix: DEPRECATED, DO NOT MAP
+  description: A heavily armored TSFMC suit. Space proof, with thick armor plating at the expense of mobility.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_combat.rsi # Mono
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_combat.rsi # Mono
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitNfsdCombat
+  - type: ExplosionResistance
+    damageCoefficient: 0.35
+  - type: Armor # Mono - Armor Value Changes
+    modifiers:
+      coefficients:
+        Blunt: 0.35
+        Slash: 0.35
+        Piercing: 0.35
+        Heat: 0.35
+        Radiation: 0.3
+        Caustic: 0.3
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.35
+  - type: PirateBountyItem # Mono
+    id: ClothingOuterHardsuitTacsuitHighValue
+
+#Security Command Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitNfsdCombat # ClothingOuterHardsuitBaseNFNfsd>ClothingOuterHardsuitNfsdCombat
+  id: ClothingOuterHardsuitNfsdCommand
+  name: TSFMC M93-C tacsuit
+  suffix: DEPRECATED, DO NOT MAP
+  description: A variant of the M93 tacsuit for high ranking officers. # Mono - Description Rewrite
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_command.rsi # Mono
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_command.rsi # Mono
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitNfsdCommand
+#  - type: ExplosionResistance # Mono - Inherents ClothingOuterHardsuitNfsdCombat
+#    damageCoefficient: 0.35
+#  - type: Armor
+#    modifiers:
+#      coefficients:
+#        Blunt: 0.225
+#        Slash: 0.325
+#        Piercing: 0.325
+#        Heat: 0.25
+#        Radiation: 0.15
+#        Caustic: 0.25
+#  - type: ClothingSpeedModifier
+#    walkModifier: 0.8
+#    sprintModifier: 0.8
+#  - type: StaminaDamageResistance # Mono - Stamres
+#    coefficient: 0.2
+
+# SCAF hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitScaf
+  name: SCAF hardsuit
+  description: A kevlar reinforced combat hardsuit. Old yet sturdy nonetheless. # mono - not green anymore cuh
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/scaf.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/scaf.rsi
+  - type: Armor
+    modifiers:
+      coefficients: # Mono - all of these values are changed
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.45 # Mono
+        Heat: 0.55
+        Radiation: 0.5 # Added Radiation Resist
+        Caustic: 0.65
+  - type: ExplosionResistance
+    damageCoefficient: 0.35
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitScaf
+  - type: PirateBountyItem # Mono
+    id: ClothingOuterHardsuitTacsuitHighValue
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.45
+
+# Tactical Maid Hardsuit
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitTacticalMaid
+  name: tactical maid hardsuit
+  description: Layers of stain resistant alloys built into a single suit. It even comes with a reinforced apron!
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/tactical_hardsuit.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/tactical_hardsuit.rsi
+  - type: Armor # Remains perfectly clean of stains
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.05
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier # So many layers of stain protection makes it very heavy
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitTacticalMaid
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.4
+
+- type: entity
+  parent: ClothingOuterHardsuitBaseNF
+  id: ClothingOuterHardsuitPirateElite
+  name: elite pirate hardsuit
+  description: An ancient elite armored hardsuit, designed by an unknown bearded man and built like a brick house.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/pirate_elite.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/pirate_elite.rsi
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitPirateElite
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.50
+        Radiation: 0.4
+        Caustic: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.75
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.4

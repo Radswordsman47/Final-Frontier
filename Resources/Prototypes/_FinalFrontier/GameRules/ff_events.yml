@@ -1,0 +1,43 @@
+
+- type: entity
+  id: StellarDustStormEvent
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: stellar-dust-storm-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    warningAnnouncement: stellar-dust-storm-warning-announcement
+    endAnnouncement: stellar-dust-storm-end-announcement
+    earliestStart: 12
+    weight: 1
+    duration: 420
+    maxDuration: 720
+    reoccurrenceDelay: 35
+  - type: BluespaceErrorRule
+    changeWeather: true
+    groups:
+      grid: !type:GridSpawnGroup
+        nameLoc:
+        - mono-monolithic-event-name-MonolithicFragment
+        minCount: 1
+        maxCount: 1
+        minimumDistance: 2000
+        maximumDistance: 4000
+        addComponents:
+        - type: Gravity
+          enabled: true
+          inherent: true
+        - type: IFF
+          color: "#a20fe1"
+        - type: Shuttle
+        - type: LinkedLifecycleGridParent
+        - type: ProtectedGrid
+          preventArtifactTriggers: true
+        - type: PreventPilot
+        - type: ForceAnchor
+        - type: ClaimableGrid
+        paths:
+        - /Maps/_Mono/Monolithic/monolithicasteroidsmallarena.yml
+        - /Maps/_Mono/Monolithic/monolithicasteroidsmallspindle.yml
+        - /Maps/_Mono/Monolithic/monolithicasteroidsmallship.yml

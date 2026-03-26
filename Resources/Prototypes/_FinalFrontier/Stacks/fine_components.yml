@@ -1,0 +1,27 @@
+- type: stack
+  id: FineComponentGun
+  name: gun component
+  icon: { sprite: _FinalFrontier/Objects/Materials/gun_component.rsi, state: guncomp }
+  spawn: FineComponentGun
+  maxCount: 100 # mono
+  
+- type: stack
+  id: FineComponentFine
+  name: fine component
+  icon: { sprite: _FinalFrontier/Objects/Materials/gun_component.rsi, state: guncomp }
+  spawn: FineComponentFine
+  maxCount: 100 # mono
+  
+- type: stack
+  id: FineComponentBasic
+  name: basic component
+  icon: { sprite: _FinalFrontier/Objects/Materials/gun_component.rsi, state: guncomp }
+  spawn: FineComponentBasic
+  maxCount: 100 # mono
+  
+- type: stack
+  id: EnrichedUraniumMaterial
+  name: enriched uranium
+  icon: { sprite: _FinalFrontier/Objects/Materials/enriched_uranium.rsi, state: uranium }
+  spawn: EnrichedUraniumMaterial
+  maxCount: 100 # mono

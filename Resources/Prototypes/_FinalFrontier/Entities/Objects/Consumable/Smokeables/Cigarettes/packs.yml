@@ -1,0 +1,14 @@
+- type: entity
+  id: CigPackSultan
+  parent: CigPackBase
+  name: sultan's smokes pack
+  description: Only the most premium cigarettes for the sultan's greatest. Combat efficiency proven to increase by 200% when smoking that sultan pack.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Consumable/Smokeables/Cigarettes/Packs/sultan_smokes.rsi
+  - type: Item
+    sprite: _FinalFrontier/Objects/Consumable/Smokeables/Cigarettes/Packs/sultan_smokes.rsi
+  - type: StorageFill
+    contents:
+    - id: CigaretteSultanSmokes
+      amount: 10

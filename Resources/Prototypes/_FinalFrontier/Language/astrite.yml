@@ -1,0 +1,30 @@
+
+- type: language
+  id: Astrite
+  isVisibleLanguage: true
+  speech:
+    color: "#fab657"
+    fontId: NotoSansSC
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 5
+    replacement:
+    - ━
+    - ┃
+    - ╍
+    - ╏
+    - ┏
+    - ┓
+    - ┗━
+    - ━┛
+    - ┣
+    - ┫
+    - ┳
+    - ┻
+    - ╋
+    - ╸
+    - ╺
+    - ╹
+    - ╻
+    - 🝔

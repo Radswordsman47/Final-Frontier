@@ -1,0 +1,10 @@
+- type: weather
+  id: StellarDust
+  sprite:
+    sprite: /Textures/_FinalFrontier/Effects/weather.rsi
+    state: stellar_dust
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -6

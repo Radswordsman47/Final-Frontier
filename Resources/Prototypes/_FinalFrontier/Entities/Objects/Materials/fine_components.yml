@@ -1,0 +1,175 @@
+- type: entity
+  parent: SheetMetalBase
+  id: FineComponentGun
+  name: gun component
+  description: A collection of intricate little bits of metal often used in firearms production.
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      GunComponent: 100
+  - type: Stack
+    stackType: FineComponentGun
+    baseLayer: base
+    layerStates:
+    - guncomp
+    - guncomp_2
+    - guncomp_3
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Materials/gun_component.rsi
+    state: guncomp_3
+    layers:
+    - state: guncomp_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: steel
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: GunComponent
+  
+- type: entity
+  parent: SheetMetalBase
+  id: FineComponentFine
+  name: fine component
+  description: A collection of intricate little bits of metal.
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      FineComponent: 100
+  - type: Stack
+    stackType: FineComponentFine
+    baseLayer: base
+    layerStates:
+    - guncomp
+    - guncomp_2
+    - guncomp_3
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Materials/gun_component.rsi
+    state: guncomp_3
+    layers:
+    - state: guncomp_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: steel
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: FineComponent
+
+- type: entity
+  parent: FineComponentGun
+  id: FineComponentGun1
+  name: gun component
+  suffix: Single
+  components:
+  - type: Sprite
+    state: steel
+  - type: Stack
+    stackType: FineComponentGun
+    count: 1
+    
+- type: entity
+  parent: FineComponentFine
+  id: FineComponentFine1
+  name: fine component
+  suffix: Single
+  components:
+  - type: Sprite
+    state: steel
+  - type: Stack
+    stackType: FineComponentFine
+    count: 1
+    
+    
+## Basic
+
+- type: entity
+  parent: SheetMetalBase
+  id: FineComponentBasic
+  name: basic component
+  description: A collection of little bits of metal.
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      BasicComponent: 100
+  - type: Stack
+    stackType: FineComponentBasic
+    baseLayer: base
+    layerStates:
+    - guncomp
+    - guncomp_2
+    - guncomp_3
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Materials/gun_component.rsi
+    state: guncomp_3
+    layers:
+    - state: guncomp_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: steel
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: BasicComponent
+    
+- type: entity
+  parent: FineComponentBasic
+  id: FineComponentBasic1
+  name: basic component
+  suffix: Single
+  components:
+  - type: Sprite
+    state: steel
+  - type: Stack
+    stackType: FineComponentBasic
+    count: 1
+    
+    
+## Enriched
+
+- type: entity
+  parent: SheetMetalBase
+  id: EnrichedUraniumMaterial
+  name: enriched uranium
+  description: clickclickclickclickclickclickclickclickclickclickclickclick.
+  components:
+  - type: Material
+  - type: RadiationSource
+    intensity: 0.5
+    slope: 5
+  - type: PhysicalComposition
+    materialComposition:
+      EnrichedUranium: 100
+  - type: Stack
+    stackType: FineComponentGun
+    baseLayer: base
+    layerStates:
+    - uranium
+    - uranium_2
+    - uranium_3
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Materials/enriched_uranium.rsi
+    state: uranium_3
+    layers:
+    - state: uranium_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: steel
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: EnrichedUranium
+
+- type: entity
+  parent: EnrichedUraniumMaterial
+  id: EnrichedUraniumMaterial1
+  name: enriched uranium
+  suffix: Single
+  components:
+  - type: Sprite
+    state: steel
+  - type: RadiationSource
+    intensity: 0.5
+    slope: 5
+  - type: Stack
+    stackType: EnrichedUraniumMaterial
+    count: 1

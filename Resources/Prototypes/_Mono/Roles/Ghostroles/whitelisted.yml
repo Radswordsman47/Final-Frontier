@@ -1,0 +1,27 @@
+- type: ghostRole
+  id: RedactedBorg
+  name: ghost-role-information-redacted-borg
+  description: ghost-role-information-redacted-borg-description
+  rules: ghost-role-information-silicon-rules
+  entityPrototype: PlayerBorgRedacted
+
+- type: ghostRole
+  id: RemnantAICore
+  name: ghost-role-information-redacted-core
+  description: ghost-role-information-redacted-core-description
+  rules: ghost-role-information-silicon-rules
+  entityPrototype: StationAiBrainRedacted
+
+- type: ghostRole
+  id: TSFMCAICore
+  name: ghost-role-information-tsfmc-core
+  description: ghost-role-information-tsfmc-core-description
+  rules: ghost-role-information-silicon-rules
+  entityPrototype: StationAiBrainTSFMC
+
+- type: ghostRole
+  id: PDVAICore
+  name: ghost-role-information-pdv-core
+  description: ghost-role-information-pdv-description
+  rules: ghost-role-information-silicon-rules
+  entityPrototype: StationAiBrainPDV

@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOrderTriarii
+  name: triarii jumpsuit
+  description: A jumpsuit used by an ancient militant order.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Uniforms/Jumpsuit/order.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Uniforms/Jumpsuit/order.rsi
+    
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOrderCaptain
+  name: legate jumpsuit
+  description: A jumpsuit used by the captains of an ancient militant order.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Uniforms/Jumpsuit/order_legate.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Uniforms/Jumpsuit/order_legate.rsi

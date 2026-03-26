@@ -1,0 +1,44 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+
+- type: vessel
+  id: Nordlys
+  parent: BaseVessel
+  name: DWI-DTC Nordlys
+  description: A joint project between the DTC and DWI, this multipurpose civillian vessel is equipped with 8 rapid fire 220mm cannons, 4 57mm autocannons and 4 20mm autocannons for bombarding any threat. Has a military designation.
+  price: 290000 # Actually only like 5k markup
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/nordlys.yml
+  guidebookPage: Null
+  class:
+  - Patrol
+  - Corvette
+  - Science
+  - Salvage
+  - Medical
+  - Chemistry
+  engine:
+  - AME
+
+- type: gameMap
+  id: Nordlys
+  mapName: 'DWI-DTC Nordlys'
+  mapPath: /Maps/_FinalFrontier/Shuttles/nordlys.yml
+  minPlayers: 0
+  stations:
+    Nordlys:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Nordlys MIL{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

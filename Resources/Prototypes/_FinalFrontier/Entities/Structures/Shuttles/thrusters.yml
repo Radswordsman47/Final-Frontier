@@ -1,0 +1,154 @@
+- type: entity
+  id: BaseThrusterHydrogen
+  parent: BaseStructureDynamic
+  name: hydrogen thruster
+  description: A thruster that allows a shuttle to move.
+  abstract: true
+  components:
+    - type: Fixtures #Mono start
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.45,-0.45,0.45,0.45"
+          density: 190
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer #Mono end
+    - type: AmbientSound
+      enabled: false
+      range: 4
+      volume: -4
+      sound:
+        path: /Audio/Effects/shuttle_thruster.ogg
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+    - type: Rotatable
+      rotateWhileAnchored: true
+    - type: Thruster
+      isHydrogen: true
+      thrust: 325
+      baseThrust: 325
+      damage:
+        types:
+          Heat: 80
+    - type: ThermalSignature # Mono
+    - type: InteractionOutline
+    - type: Sprite
+    - type: Appearance
+    - type: ThrusterVisuals
+    - type: ApcPowerReceiver
+      powerLoad: 250
+    - type: ExtensionCableReceiver
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: Electronic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 300  # Changed 100->300 because impact damage is real
+        behaviors:
+          - !type:DoActsBehavior
+            acts: ["Destruction"]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+    - type: StaticPrice
+      price: 300
+    - type: GuideHelp
+      guides:
+      - ShuttleCraft
+  placement:
+    mode: SnapgridCenter
+
+- type: entity
+  id: ThrusterHydrogen
+  name: hydrogen thruster
+  parent: [ BaseThrusterHydrogen, ConstructibleMachine ]
+  components:
+  - type: Machine
+    board: ThrusterHydrogenMachineCircuitboard
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+  - type: Sprite
+    sprite: _FinalFrontier/Structures/Shuttles/hydrogen_thruster.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      state: pipeBinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+  - type: AtmosPipeLayers
+    spriteLayersRsiPaths:
+      enum.PipeVisualLayers.Pipe:
+        Primary: Structures/Piping/Atmospherics/pipe.rsi
+        Secondary: Structures/Piping/Atmospherics/pipe_alt1.rsi
+        Tertiary: Structures/Piping/Atmospherics/pipe_alt2.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.PumpVisuals.Enabled:
+        enabled:
+          True: { state: running }
+          False: { state: unlit }
+  - type: PipeColorVisuals
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+  - type: AmbientSound
+    enabled: true
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/gas_pump.ogg
+  - type: AtmosDevice
+  - type: AtmosPipeColor
+  - type: DeviceNetwork # frontier
+    deviceNetId: Wireless # frontier
+    receiveFrequencyId: BasicDevice # frontier
+  - type: WirelessNetworkConnection # frontier
+    range: 200 # frontier
+  - type: DeviceLinkSink # frontier
+    ports: # frontier
+    - On # frontier
+    - Off # frontier
+    - Toggle # frontier
+  - type: PirateBountyItem # Frontier
+    id: Thruster # Frontier
+  - type: RadarBlip # Mono
+    visibleFromOtherGrids: false
+    radarColor: "#FFA500"
+    scale: 1
+    shape: diamond

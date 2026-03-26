@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Shuttle Notes: the sun before it was cool
+
+- type: vessel
+  id: Conductor
+  parent: BaseVessel
+  name: NVK Conductor
+  description: A mobile space saloon with a hull modelled after old Terran "Wild West" media. Comes with 2 L98s and 4 AK570s, along with the full saloon, salvage equipment and a light armory.
+  price: 76000
+  category: medium
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/conductor.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  - Kitchen
+  - Salvage
+
+  engine:
+  - Steam
+
+- type: gameMap
+  id: Conductor
+  mapName: 'NVK Conductor'
+  mapPath: /Maps/_FinalFrontier/Shuttles/conductor.yml
+  minPlayers: 0
+  stations:
+    Conductor:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Conductor CIV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

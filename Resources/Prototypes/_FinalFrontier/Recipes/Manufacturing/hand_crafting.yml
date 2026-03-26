@@ -1,0 +1,35 @@
+- type: constructionGraph
+  id: ArmoredRadsuit
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: armoredRadsuit
+      steps:
+      - tag: Radsuit
+        icon:
+          sprite: Clothing/OuterClothing/Suits/rad.rsi
+          state: icon
+        name: radiation suit
+        doAfter: 10
+      - material: Durathread
+        amount: 25
+        doAfter: 10
+      - material: Plasteel
+        amount: 10
+        doAfter: 10
+  - node: armoredRadsuit
+    entity: ClothingOuterSuitRadArmored
+
+- type: construction
+  name: armored radiation suit
+  id: ArmoredRadsuit
+  graph: ArmoredRadsuit
+  startNode: start
+  targetNode: armoredRadsuit
+  category: construction-category-clothing
+  objectType: Item
+  description: A suit that protects against radiation. This one is outfitted with combat armor.
+  icon:
+    sprite: _FinalFrontier/Clothing/OuterClothing/Suits/armored_radsuit.rsi
+    state: icon

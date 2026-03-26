@@ -1,0 +1,145 @@
+# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartAstrum
+  parent: [BaseItem, BasePart]
+  name: "astrum body part"
+  abstract: true
+  components:
+  - type: Icon # Shitmed Change
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+  - type: BodyPart # Shitmed Change
+    species: Astrum
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoAstrum
+  name: "astrum torso"
+  parent: [PartAstrum, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "torso_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadAstrum
+  name: "astrum head"
+  parent: [PartAstrum, BaseHead]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "head_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmAstrum
+  name: "left astrum arm"
+  parent: [PartAstrum, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "l_arm"
+
+- type: entity
+  id: RightArmAstrum
+  name: "right astrum arm"
+  parent: [PartAstrum, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "r_arm"
+
+- type: entity
+  id: LeftHandAstrum
+  name: "left astrum hand"
+  parent: [PartAstrum, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "l_hand"
+
+- type: entity
+  id: RightHandAstrum
+  name: "right astrum hand"
+  parent: [PartAstrum, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "r_hand"
+
+- type: entity
+  id: LeftLegAstrum
+  name: "left astrum leg"
+  parent: [PartAstrum, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "l_leg"
+
+- type: entity
+  id: RightLegAstrum
+  name: "right astrum leg"
+  parent: [PartAstrum, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "r_leg"
+
+- type: entity
+  id: LeftFootAstrum
+  name: "left astrum foot"
+  parent: [PartAstrum, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "l_foot"
+
+- type: entity
+  id: RightFootAstrum
+  name: "right astrum foot"
+  parent: [PartAstrum, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    unShaded: true
+    state: "r_foot"

@@ -1,0 +1,15 @@
+- type: damageModifierSet
+  id: Astrum
+  coefficients:
+    Blunt: 1.6
+    Slash: 1.6
+    Piercing: 1.6
+    Cold: 1.0
+    Heat: 0.0
+    Poison: 0.0
+    Cellular: 0.0
+    Caustic: 0.0
+    Shock: 3.0
+    Radiation: 0.0
+    Asphyxiation: 0.0
+    

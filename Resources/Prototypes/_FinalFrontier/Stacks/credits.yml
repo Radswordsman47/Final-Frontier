@@ -1,0 +1,5 @@
+- type: stack
+  id: CoalitionMilitaryCredit
+  name: coalition military credit
+  icon: _NF/Objects/Specific/Security/frontieruplinkcoin.rsi
+  spawn: CoalitionMilitaryCredit1

@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Shuttle Notes:
+- type: vessel
+  id: Timebomb
+  parent: BaseVessel
+  name: Timebomb
+  description: A small, barely armored minelayer without any proper safety regulations. Questionably reliable.
+  price: 35000
+  category: Small
+  group: Scrap
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/Scrap/timebomb.yml
+  guidebookPage: Null
+  class:
+  - Salvage
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Timebomb
+  mapName: 'Timebomb'
+  mapPath: /Maps/_FinalFrontier/Shuttles/Scrap/timebomb.yml
+  minPlayers: 0
+  stations:
+    Timebomb:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Timebomb MIL{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

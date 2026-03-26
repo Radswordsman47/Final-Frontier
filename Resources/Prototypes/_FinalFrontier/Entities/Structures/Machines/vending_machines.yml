@@ -1,0 +1,54 @@
+- type: entity
+  parent: [VendingMachineAstroVend, BaseStructureDisableAnchoring]
+  id: VendingMachineEquipmentPDV
+  name: PDV Requisition Vendor
+  description: Provides equipment for the Dynast troops in sector.
+  suffix: POI
+  components:
+  - type: VendingMachine
+    pack: PDVVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: MarketModifier
+    mod: 8
+  - type: Sprite
+    sprite: _FinalFrontier/Structures/Machines/VendingMachines/pdv_vend.rsi
+    layers:
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.Base" ]
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: AccessReader
+    access: [["Pirate"]]
+    
+- type: entity
+  parent: [VendingMachineAstroVend, BaseStructureDisableAnchoring]
+  id: VendingMachineEquipmentTactical
+  name: Tactical Equipment Vendor
+  description: Provides tactical gear of questionable quality.
+  suffix: POI
+  components:
+  - type: VendingMachine
+    pack: TacVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: MarketModifier
+    mod: 8
+  - type: Sprite
+    sprite: _FinalFrontier/Structures/Machines/VendingMachines/tac_vend.rsi
+    layers:
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.Base" ]
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: AccessReader
+    access: [["Mercenary"], ["Security"]]
+

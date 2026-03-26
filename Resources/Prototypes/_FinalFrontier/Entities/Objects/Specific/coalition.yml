@@ -1,0 +1,121 @@
+# FUCs->FMCs, value 5x normal frontier value
+
+- type: entity
+  name: Coalition Military Credit # Mono - Renamed from FUCs
+  parent: BaseItem
+  id: CoalitionMilitaryCredit # Mono - Renamed from FUCs
+  suffix: 100 CMC # Mono
+  description: A token given to CORS personnel for usage in their uplinks.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Security/frontieruplinkcoin.rsi
+    state: frontieruplinkcoin
+  - type: Item
+    sprite: _NF/Objects/Specific/Security/frontieruplinkcoin.rsi
+    size: Tiny
+  - type: Stack
+    count: 100 # Mono
+    stackType: CoalitionMilitaryCredit
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 40 # Mono
+  - type: Currency
+    price:
+      CoalitionMilitaryCredit: 1
+
+- type: entity
+  parent: CoalitionMilitaryCredit
+  id: CoalitionMilitaryCredit1
+  suffix: 1 CMC
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: CoalitionMilitaryCredit
+  id: CoalitionMilitaryCredit5
+  suffix: 5 CMC
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: CoalitionMilitaryCredit
+  id: CoalitionMilitaryCredit25
+  suffix: 25 CMC
+  components:
+  - type: Stack
+    count: 25
+
+- type: entity
+  parent: CoalitionMilitaryCredit
+  id: CoalitionMilitaryCredit50
+  suffix: 50 CMC
+  components:
+  - type: Stack
+    count: 50
+
+# Uplinks
+- type: entity
+  parent: [ BaseItem, StorePresetCoalitionUplink ]
+  id: BaseCoalitionUplinkRadio
+  name: CORS uplink
+  description: Retro looking old radio...
+  suffix: Empty
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Tag
+    tags:
+    - CoalitionUplink
+
+- type: entity
+  parent: BaseCoalitionUplinkRadio
+  id: BaseCoalitionUplinkRadioDebug
+  suffix: Coalition, DEBUG
+  components:
+  - type: Store
+    balance:
+      CoalitionMilitaryCredit: 99999
+
+- type: entity
+  parent: BaseCoalitionUplinkRadio
+  id: BaseCoalitionUplinkRadioSheriff
+  suffix: Commander 125
+  components:
+  - type: Store
+    balance:
+      CoalitionMilitaryCredit: 125
+
+- type: entity
+  parent: BaseCoalitionUplinkRadio
+  id: BaseCoalitionUplinkRadioOfficer
+  suffix: Officer 75
+  components:
+  - type: Store
+    balance:
+      CoalitionMilitaryCredit: 75
+
+#Mono
+
+- type: entity
+  parent: BaseCoalitionUplinkRadio
+  id: BaseCoalitionUplinkRadioDeputy
+  suffix: Operative 75
+  components:
+  - type: Store
+    balance:
+      CoalitionMilitaryCredit: 75

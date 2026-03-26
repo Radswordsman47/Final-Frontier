@@ -1,0 +1,24 @@
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorOrder
+  name: order vest
+  description: An ancient armor vest, made to resist ancient threats.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Vests/order.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Vests/order.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.35
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.2
+  - type: Tag  # Mono
+    tags:
+    - Kevlar

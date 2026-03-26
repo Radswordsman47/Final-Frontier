@@ -1,0 +1,71 @@
+- type: loadoutGroup
+  id: MercenaryFirearm
+  name: loadout-group-weapon
+  minLimit: 0
+  loadouts:
+  # - MercenaryEnforcerLoadout
+  # - MercenaryWt550Loadout
+  # - MercenaryC20rLoadout
+  - MercenaryGestioLoadout
+  - MercenaryNovaliteLoadout
+  - MercenaryAk220Loadout
+  - MercenaryRavenLoadout # Final Frontier
+  - MercenaryBreacherLoadout # Final Frontier
+  - MercenaryPatternRepeaterLoadout # Final Frontier
+  - MercenaryKnallstockLoadout
+  - MercenaryKeyboardLoadout
+  - MercenaryHenryRepeaterLoadout # Final Frontier
+  - MercenaryWessexRifleLoadout # Final Frontier
+  - MercenaryPrometheusLoadout
+  - MercenaryVulcanCLoadout
+  - MercenaryMosinLoadout
+  - MercenarySvsLoadout
+  - MercenaryKammererLoadout
+  - MercenaryDisablerSMGLoadout
+  - MercenaryLaserCarbineLoadout
+  - MercenaryEnergyGunLoadout
+
+- type: loadoutGroup
+  id: MercenaryPistol
+  name: loadout-group-pistol
+  minLimit: 0
+  loadouts:
+  - MercenaryPollockLoadout
+  - MercenaryMk58Loadout
+  - MercenaryViperLoadout
+  - ContractorArgentiLoadout
+  - MercenarySawedOffLoadout
+  - MercenaryNavyRevolverLoadout # Final Frontier
+  - MercenaryHelepolisLoadout
+  - ContractorDisablerLoadout
+  - MercenaryLaserPistolLoadout
+  - MercenaryCombatKnifeLoadout
+  - MercenaryKukriKnifeLoadout
+  - MercenaryThrowingKnifeLoadout
+  - MercenaryMacheteLoadout
+  fallbacks:
+  - MercenaryPollockLoadout
+
+- type: loadoutGroup
+  id: MercenaryMag
+  name: loadout-group-magazine
+  minLimit: 0
+  loadouts:
+  - Mercenary9x19mmPistolAmmoLoadout #Pollock / Viper / Knallstock
+  - MercenaryAcpPistolAmmoLoadout #MK58 / Knallstock
+  - Contractor556x45mmAmmoLoadout #Argenti
+  - Mercenary762x39mmAmmoLoadout #Gestio
+  - MercenaryNovaliteAmmoLoadout #Novalite
+  - Mercenary9x19SmgAmmoLoadout #AK220
+  - MercenaryAcpSubAmmoLoadout #Keyboard
+  - Mercenary556x45mmAmmoLoadout #Prometheus
+  - Mercenary762x51mmAmmoLoadout #Vulcan-C
+  - MercenaryBuckshotAmmoLoadout #Kammerer / Sawn Buckshot
+  - MercenarySlugAmmoLoadout #Kammerer / Sawn Slugs
+  - Mercenary45MagnumAmmoLoadout # Repeater - Final Frontier
+  # - Mercenary46x30mmTopAmmoLoadout #WT550
+  - Mercenary4gAmmoLoadout # Breacher - Final Frontier
+  - Mercenary762x54mmRAmmoLoadout #Mosin / SVS42
+  - MercenaryRechargerLoadout #Energy
+  fallbacks:
+  - Mercenary9x19mmPistolAmmoLoadout #Pollock

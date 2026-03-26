@@ -1,0 +1,47 @@
+﻿# DIE SNAKE CASE
+- type: body
+  id: Astrum
+  name: "astrum"
+  root: torso
+  slots:
+    head:
+      part: HeadAstrum
+      connections:
+      - torso
+      organs:
+        brain: OrganAstrumBrain
+    torso:
+      part: TorsoAstrum
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head # Shitmed
+      organs:
+        stomach: OrganAstrumStomach
+        liver: OrganAstrumLiver
+    right arm:
+      part: RightArmAstrum
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmAstrum
+      connections:
+      - left hand
+    right hand:
+      part: RightHandAstrum
+    left hand:
+      part: LeftHandAstrum
+    right leg:
+      part: RightLegAstrum
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegAstrum
+      connections:
+      - left foot
+    right foot:
+      part: RightFootAstrum
+    left foot:
+      part: LeftFootAstrum

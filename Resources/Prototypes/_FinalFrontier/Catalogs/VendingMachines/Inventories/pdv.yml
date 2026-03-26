@@ -1,0 +1,12 @@
+- type: vendingMachineInventory
+  id: PDVVendInventory
+  startingInventory:
+    ClothingBackpackPDV: 4294967295 # Infinite
+    ClothingBackpackDuffelPDV: 4294967295 # Infinite
+    ClothingBackpackSatchelPDV: 4294967295 # Infinite
+    ClothingHeadHatNfsdBeretBrown: 4294967295 # Infinite
+    ClothingHeadHatFez: 4294967295 # Infinite
+    ClothingUniformJumpsuitNfsdTacCream: 4294967295 # Infinite
+    CigPackSultan: 10
+    CombatKnife: 4294967295 # Infinite
+    EncryptionKeyFreelance: 4294967295 # Infinite

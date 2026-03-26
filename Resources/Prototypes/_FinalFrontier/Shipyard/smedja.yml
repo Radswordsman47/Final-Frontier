@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+
+- type: vessel
+  id: Smedja
+  parent: BaseVessel
+  name: DWI Smedja
+  description: One of the smallest, cheapest manufacturing vessels on the market, manufactured by Dornan-Weryl Industrial. Has an Industrial tag.
+  price: 32000
+  category: small
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/smedja.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Smedja
+  mapName: 'DWI Smedja'
+  mapPath: /Maps/_FinalFrontier/Shuttles/smedja.yml
+  minPlayers: 0
+  stations:
+    Smedja:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Smedja IND{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

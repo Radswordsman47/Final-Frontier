@@ -1,0 +1,81 @@
+# Basic Mine
+
+- type: entity
+  id: ShipMineBasic
+  name: mine
+  parent: BaseTorpedo
+  components:
+  - type: MovementIgnoreGravity
+  - type: TimedDespawn
+    lifetime: 360
+  - type: Projectile
+    ignoreShooter: true
+    linearDampening: 10
+    damage:
+      types:
+        Structural: 2500
+        Blunt: 200
+        Heat: 100
+  - type: Sprite
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Projectiles/mine.rsi
+    layers:
+    - state: large
+  - type: Ammo
+    muzzleFlash: null
+  - type: ShipWeaponProjectile
+  - type: RadarBlip
+    radarColor: "#FF0000"
+    scale: 2
+    requireNoGrid: true
+    shape: diamond
+  - type: PointLight
+    radius: 3
+    color: red
+    energy: 1
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: HardBombShipGun
+    maxIntensity: 6000
+    tileBreakScale: 6
+    intensitySlope: 35
+    totalIntensity: 8000
+  - type: Meteor
+    damageTypes:
+      types:
+        Blunt: 1
+  - type: GatheringProjectile
+  - type: MiningGatheringSoft
+  - type: MiningGatheringHard
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 550
+    soundHit:
+      collection: MetalThud
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: true
+        mask:
+        - Impassable
+        - BulletImpassable
+        layer:
+        - MobLayer

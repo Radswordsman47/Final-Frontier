@@ -1,0 +1,177 @@
+# Anything human specific (e.g. UI, input) goes under MobHuman
+- type: entity
+  parent:
+  - MobFlammable
+  - BaseMobSpecies
+  id: BaseMobAstrum
+  name: Urist McStarman
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+  - type: InjectableSolution
+    solution: chemicals
+  - type: Bloodstream
+    bloodReagent: Plasma
+    bloodlossDamage:
+      types:
+        Cold: 1
+    bloodlossHealDamage:
+      types:
+        Cold: -5
+
+  - type: ZombieImmune
+  - type: Fingerprint
+  - type: Blindable
+  - type: Hunger
+  - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    shader: unshaded
+    state: full
+  - type: Thirst
+  - type: Body
+    prototype: Astrum
+    requiredLegs: 2
+  - type: LanguageKnowledge # Einstein Engines - Languages
+    speaks:
+    - TauCetiBasic
+    - Astrite
+    understands:
+    - TauCetiBasic
+    - Astrite
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: Sprite # sprite again because we want different layer ordering
+    noRot: true
+    drawdepth: Mobs
+    layers:
+      - map: [ "enum.HumanoidVisualLayers.Chest" ]
+      - map: [ "enum.HumanoidVisualLayers.Head" ]
+      - map: [ "enum.HumanoidVisualLayers.Snout" ]
+      - map: [ "enum.HumanoidVisualLayers.RArm" ]
+      - map: [ "enum.HumanoidVisualLayers.LArm" ]
+      - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+      - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+      - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      - map: [ "jumpsuit" ]
+      - map: [ "balaclava" ]
+      - map: [ "enum.HumanoidVisualLayers.LHand" ]
+      - map: [ "enum.HumanoidVisualLayers.RHand" ]
+      - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+      - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+      - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+      - map: [ "gloves" ]
+      - map: [ "shoes" ]
+      - map: [ "ears" ]
+      - map: [ "id" ] # Mono - move from between belt and back
+      - map: [ "outerClothing" ] # mono - i hate you upstream
+      - map: [ "eyes" ]
+      - map: [ "belt" ]
+      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
+      - map: [ "back" ]
+      - map: [ "neck" ]
+      - map: [ "neck2" ]
+      - map: [ "neck3" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+      - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+      - map: [ "mask" ]
+      - map: [ "head" ]
+      - map: [ "helmetcover" ]
+      - map: [ "helmetattachment" ]
+      - map: [ "pocket1" ]
+      - map: [ "pocket2" ]
+      - map: [ "clownedon" ] # Dynamically generated
+        sprite: "Effects/creampie.rsi"
+        state: "creampie_moth"
+        visible: false
+  - type: Temperature
+    heatDamageThreshold: 12800
+    coldDamageThreshold: 5600
+    currentTemperature: 5800
+    coldDamage:
+      types:
+        Cold: 2 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 0 #per second, scales with temperature & other constants
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Astrum
+  - type: Vocal
+    sounds:
+      Male: MaleAstrum
+      Female: FemaleAstrum
+      Unsexed: MaleAstrum
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcFist
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 3
+        Heat: 5
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 10
+    implicitHeatRegulation: 5000
+    sweatHeatRegulation: 2000
+    shiveringHeatRegulation: 2000
+    normalBodyTemperature: 5800
+    thermalRegulationTemperatureThreshold: 25
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Astrum
+    - FootstepSound
+    - CanPilot
+    - Humanoid
+    - AnomalyHost
+  - type: HumanoidAppearance
+    species: Astrum
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Carriable # Frontier: Carrying system from nyanotrasen.
+  - type: Speech # Frontier
+  - type: Flammable
+    fireSpread: true
+    canResistFire: true
+    damage:
+      types:
+        Heat: 0
+  - type: FireVisuals
+    alternateState: Standing
+  - type: LayingDown # WD EDIT
+  - type: CPRTraining # Goobstation
+  - type: PseudoItem # Mono - Everyone bluespace baggable
+    storedOffset: -10,0
+    shape:
+      - 0, 0, 4, 4
+      - 0, 3, 6, 5
+  
+- type: entity
+  save: false
+  name: Urist McStarman
+  parent: BaseMobAstrum
+  id: MobAstrum
+
+    
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobAstrumDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Inventory

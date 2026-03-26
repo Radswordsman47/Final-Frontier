@@ -1,0 +1,11 @@
+# holy FUCK WHY ARE GASSES YAML'D LIKE THIS?? WHY DO THEY . AAAAGH.
+
+- type: gas
+  id: 13
+  name: gases-hydrogen
+  specificHeat: 263
+  heatCapacityRatio: 1.4
+  molarMass: 2
+  color: DA1010
+  reagent: Hydrogen
+  pricePerMole: 0.2

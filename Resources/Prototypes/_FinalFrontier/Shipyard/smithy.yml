@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Shuttle Notes: INDUSTRIALISM RAAGH
+
+- type: vessel
+  id: Smithy
+  parent: BaseVessel
+  name: DTC Smithy
+  description: Dunnmore Trade Conglomerates most sold manufacturing vessel, comes with all the equipment you need for industrial scale manufacturing. Has an Industrial tag.
+  price: 120000
+  category: medium
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/smithy.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  - Salvage
+
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Smithy
+  mapName: 'DTC Smithy'
+  mapPath: /Maps/_FinalFrontier/Shuttles/smithy.yml
+  minPlayers: 0
+  stations:
+    Smithy:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Smithy IND{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

@@ -1,0 +1,190 @@
+- type: species
+  id: Astrum
+  name: species-name-astrum
+  roundStart: true
+  prototype: MobAstrum
+  sprites: MobAstrumSprites
+  defaultSkinTone: "#b8b8b8"
+  markingLimits: MobAstrumMarkingLimits
+  dollPrototype: MobAstrumDummy
+  skinColoration: Hues
+
+# The lack of a layer means that
+# this person cannot have round-start anything
+# applied to that layer. It has to instead
+# be defined as a 'custom base layer'
+# in either the mob's starting marking prototype,
+# or it has to be added in C#.
+- type: speciesBaseSprites
+  id: MobAstrumSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: MobAstrumHead
+    Hair: MobHumanoidMarkingMatchSkin
+    FacialHair: MobHumanoidMarkingMatchSkin
+    Eyes: MobAstrumEye
+    Snout: MobHumanoidAnyMarking
+    Chest: MobAstrumTorso
+    HeadTop: MobHumanoidAnyMarking
+    LArm: MobAstrumLArm
+    RArm: MobAstrumRArm
+    LHand: MobAstrumLHand
+    RHand: MobAstrumRHand
+    LLeg: MobAstrumLLeg
+    RLeg: MobAstrumRLeg
+    LFoot: MobAstrumLFoot
+    RFoot: MobAstrumRFoot
+    Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid, harpies & Tajaran.
+    HeadSide: MobHumanoidAnyMarking # Einstein Engines - Oni
+
+- type: markingPoints
+  id: MobAstrumMarkingLimits
+  points:
+    Special: # the cat ear joke
+      points: 0
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    Tail: # the cat tail joke
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Legs:
+      points: 8 # imp 2<8
+      required: false
+    Arms:
+      points: 8 # imp 2<8
+      required: false
+
+
+- type: humanoidBaseSprite
+  id: MobAstrumEye
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: eyes
+  layerGlow: true
+    
+- type: humanoidBaseSprite
+  id: MobAstrumHead
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: head_m
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumHeadMale
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: head_m
+  layerGlow: true
+    
+- type: humanoidBaseSprite
+  id: MobAstrumHeadFemale
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: head_f
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumTorso
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: torso_m
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumTorsoMale
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: torso_m
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumTorsoFemale
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: torso_f
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumLLeg
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: l_leg
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumLArm
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: l_arm
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumLHand
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: l_hand
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumLFoot
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: l_foot
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumRLeg
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: r_leg
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumRArm
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: r_arm
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumRHand
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: r_hand
+  layerGlow: true
+
+- type: humanoidBaseSprite
+  id: MobAstrumRFoot
+  baseSprite:
+    sprite: _FinalFrontier/Mobs/Species/Astrum/parts.rsi
+    unShaded: true
+    state: r_foot
+  layerGlow: true

@@ -1,0 +1,108 @@
+# SPDX-FileCopyrightText: 2025 Ilya246
+# SPDX-FileCopyrightText: 2025 ScyronX
+# SPDX-FileCopyrightText: 2025 Whatstone
+# SPDX-FileCopyrightText: 2025 beck-thompson
+# SPDX-FileCopyrightText: 2025 deltanedas
+# SPDX-FileCopyrightText: 2025 starch
+# SPDX-FileCopyrightText: 2025 tonotom
+# SPDX-FileCopyrightText: 2025 tonotom1
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+## Static
+
+- type: latheRecipePack
+  id: ToolsStatic
+  recipes:
+  - Wirecutter
+  - Screwdriver
+  - Welder
+  - Wrench
+  - CrowbarGreen
+  - Multitool
+  - MaintenanceJack #Mono
+  - NetworkConfigurator # Frontier: downgrade vs. multitool # Final Frontier: Don't care, ability to craft is better than inability.
+  - Signaller
+  - SprayPainter
+  - FlashlightLantern
+  - HandheldGPSBasic # Frontier: little value # Final Frontier: Don't care, ability to craft is better than inability.
+  - TRayScanner
+  - UtilityBelt
+  - HandheldStationMap
+  - ClothingHeadHatWelding
+  - ClothingHeadHatCone
+
+- type: latheRecipePack
+  id: AtmosStatic
+  recipes:
+  - AirTank
+  - GasAnalyzer
+
+- type: latheRecipePack
+  id: ElectronicsStatic
+  recipes:
+  - IntercomElectronics
+  - FirelockElectronics
+  - DoorElectronics
+  - AirAlarmElectronics
+  - StationMapElectronics
+  - FireAlarmElectronics
+  - MailingUnitElectronics
+  - SignalTimerElectronics
+  - APCElectronics
+  - SMESMachineCircuitboard
+  - SubstationMachineCircuitboard
+  - WallmountSubstationElectronics
+  - CellRechargerCircuitboard
+  - WeaponCapacitorRechargerCircuitboard
+  - FreezerElectronics
+
+- type: latheRecipePack
+  id: EngineeringBoardsStatic
+  recipes:
+  - SpaceHeaterMachineCircuitBoard
+
+## Dynamic
+
+- type: latheRecipePack
+  id: AdvancedTools
+  recipes:
+  - PowerDrill
+  - WelderExperimental
+  - JawsOfLife
+  - ExperimentalNaniteApplicator
+  # - Fulton # Frontier
+  # - FultonBeacon # Frontier
+
+- type: latheRecipePack
+  id: AtmosTools
+  recipes:
+  - HolofanProjector
+
+# Frontier: no engineering weapons to unlock
+
+# - type: latheRecipePack
+#   id: EngineeringWeapons
+#   recipes:
+#   - WeaponParticleDecelerator
+
+# End Frontier
+
+- type: latheRecipePack
+  id: EngineeringBoards
+  recipes:
+  - ThermomachineFreezerMachineCircuitBoard
+  - HellfireFreezerMachineCircuitBoard
+  - PortableScrubberMachineCircuitBoard
+  - SolarControlComputerCircuitboard
+  - SolarTrackerElectronics
+  - GasRecyclerMachineCircuitboard
+  - PortableGeneratorPacmanMachineCircuitboard
+  - PortableGeneratorSuperPacmanMachineCircuitboard
+  - PortableGeneratorJrPacmanMachineCircuitboard
+  - EmitterCircuitboard
+  - ContainmentFieldGeneratorCircuitboard # Mono
+  - TelecomServerCircuitboard
+  - SMESAdvancedMachineCircuitboard
+  - CrystallizerMachineCircuitboard # Mono/Funky
+  # - HolopadMachineCircuitboard # Frontier: use NF variant

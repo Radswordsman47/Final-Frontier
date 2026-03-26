@@ -1,0 +1,86 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatTrenchBlack
+  name: trench coat
+  description: A comfy trench coat.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Coats/black_trenchcoat.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Coats/black_trenchcoat.rsi
+    quickEquip: true
+    slots: [ outerClothing, neck ]
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 20
+          
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterLongcoatBrown
+  name: long coat
+  description: A rough, knee length coat. Yeehaw.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Coats/brown_longcoat.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Coats/brown_longcoat.rsi
+    quickEquip: true
+    slots: [ outerClothing, neck ]
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 20
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterLongcoatBlack
+  name: long coat
+  description: A rough, knee length coat. Yeehaw.
+  components:
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/OuterClothing/Coats/black_longcoat.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/OuterClothing/Coats/black_longcoat.rsi
+    quickEquip: true
+    slots: [ outerClothing, neck ]
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 20

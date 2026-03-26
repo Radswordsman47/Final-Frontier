@@ -1,0 +1,41 @@
+# Author Info
+# GitHub: DuneTemplar
+# Discord: dunetemplar
+
+# Shuttle Notes: Another settlement needs your help
+
+- type: vessel
+  id: Minuteman
+  parent: BaseVessel
+  name: DWI Minuteman
+  description: No atmospherics, no gravity, just a M6A2 heavy machine gun and a dream. Good luck.
+  price: 16000
+  category: Small
+  group: Shipyard
+  shuttlePath: /Maps/_Mono/Shuttles/minuteman.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  - Pursuit
+  engine:
+  - APU
+
+- type: gameMap
+  id: Minuteman
+  mapName: 'DWI Minuteman'
+  mapPath: /Maps/_Mono/Shuttles/minuteman.yml
+  minPlayers: 0
+  stations:
+    Minuteman:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Minuteman CIV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

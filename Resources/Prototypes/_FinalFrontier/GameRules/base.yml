@@ -1,0 +1,11 @@
+- type: entity
+  id: StellarStormEventsScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: StellarStormEventsTable
+    minimumTimeUntilFirstEvent: 1 # 10 minutes
+    minMaxEventTiming:
+      min: 420 # 7 minutes between events
+      max: 1200 # 20 minutes between events

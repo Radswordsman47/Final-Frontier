@@ -1,0 +1,11 @@
+- type: jukebox
+  id: iron_lotus
+  name: Mili - Iron Lotus
+  path:
+    path: /Audio/_FinalFrontier/Jukebox/iron_lotus.ogg
+
+- type: jukebox
+  id: cliff_notes
+  name: loosebox - Cliff Notes
+  path:
+    path: /Audio/_FinalFrontier/Jukebox/cliff_notes.ogg

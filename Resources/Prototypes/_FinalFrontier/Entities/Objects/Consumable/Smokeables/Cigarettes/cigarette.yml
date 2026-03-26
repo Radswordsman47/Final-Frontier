@@ -1,0 +1,16 @@
+- type: entity
+  id: CigaretteSultanSmokes
+  parent: SoakedCigarette
+  name: sultan's smoke
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 60
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: SpaceDrugs
+            Quantity: 25
+          - ReagentId: THC
+            Quantity: 25

@@ -1,0 +1,18 @@
+- type: entity
+  id: StorePresetCoalitionUplink
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-coalition-uplink
+    categories:
+    - UplinkSecurityHardsuits
+    - UplinkSecurityWeapons
+    - UplinkSecurityAmmo
+    - UplinkSecurityUtility
+    - UplinkSecurityExplosives
+    - UplinkSecurityBundles
+    - UplinkSecurityVouchers # Mono
+    currencyWhitelist:
+    - CoalitionMilitaryCredit
+    balance:
+      CoalitionMilitaryCredit: 0

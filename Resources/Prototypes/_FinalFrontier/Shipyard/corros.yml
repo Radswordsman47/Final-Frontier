@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Shuttle Notes: INDUSTRIALISM RAAGH
+
+- type: vessel
+  id: Corros
+  parent: BaseVessel
+  name: DTC Corros
+  description: One of Dunnmore Trade Conglomerate's bigger vessels. Equipped with 4 autosmiths and metal casters it boasts unparalleled manufacturing power. Has an Industrial tag.
+  price: 210000
+  category: medium
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/corros.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  - Salvage
+
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Corros
+  mapName: 'DTC Corros'
+  mapPath: /Maps/_FinalFrontier/Shuttles/corros.yml
+  minPlayers: 0
+  stations:
+    Corros:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Corros IND{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

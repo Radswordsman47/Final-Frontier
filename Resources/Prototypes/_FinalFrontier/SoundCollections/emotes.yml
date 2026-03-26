@@ -1,0 +1,76 @@
+- type: soundCollection
+  id: MaleAstrumScreams
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/malescream_1.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/malescream_2.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/malescream_3.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/malescream_4.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/malescream_5.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/malescream_6.ogg
+
+- type: soundCollection
+  id: FemaleAstrumScreams
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/femalescream_1.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/femalescream_2.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/femalescream_3.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/femalescream_4.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/femalescream_5.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/femalescream_6.ogg
+
+- type: soundCollection
+  id: MaleAstrumLaugh
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/manlaugh1.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/manlaugh2.ogg
+
+- type: soundCollection
+  id: FemaleAstrumLaugh
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/womanlaugh.ogg
+
+- type: soundCollection
+  id: MaleAstrumCough
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/male_cough_1.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/male_cough_2.ogg
+
+- type: soundCollection
+  id: FemaleAstrumCough
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/female_cough_1.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/female_cough_2.ogg
+
+- type: soundCollection
+  id: MaleAstrumSigh
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/male_sigh.ogg
+
+- type: soundCollection
+  id: FemaleAstrumSigh
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/female_sigh.ogg
+
+- type: soundCollection
+  id: MaleAstrumCry
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/cry_male_1.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/cry_male_2.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/cry_male_3.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/cry_male_4.ogg
+
+- type: soundCollection
+  id: FemaleAstrumCry
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/cry_female_1.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/cry_female_2.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/cry_female_3.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/cry_female_4.ogg
+
+- type: soundCollection
+  id: AstrumWhistles
+  files:
+    - /Audio/_FinalFrontier/Voice/Astrum/whistle_1.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/whistle_2.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/whistle_3.ogg
+    - /Audio/_FinalFrontier/Voice/Astrum/whistle_4.ogg

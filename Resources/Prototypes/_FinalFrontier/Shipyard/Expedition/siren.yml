@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+- type: vessel
+  id: Siren
+  parent: BaseVessel
+  name: DTC Siren
+  description: A general purpose civillian ship made by the Dunnmore Trade Conglomerate. Expedition capable.
+  price: 48000
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/Expedition/siren.yml
+  guidebookPage: null
+  class:
+  - Expedition
+  - Salvage
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Siren
+  mapName: 'DTC Siren'
+  mapPath: /Maps/_FinalFrontier/Shuttles/Expedition/siren.yml
+  minPlayers: 0
+  stations:
+    Siren:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Siren EXP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

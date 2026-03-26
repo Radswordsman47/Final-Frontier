@@ -1,0 +1,33 @@
+- type: entity
+  id: BaseGunMelee
+  abstract: true
+  components:
+  - type: Sprite
+  - type: MeleeRequiresWield
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Slash: 10
+       Piercing: 5
+    angle: 0
+    wideAnimationRotation: -135
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: AltFireMelee
+    attackType: Light
+  - type: DisarmMalus
+    malus: 0.225
+  - type: ItemSlots
+    slots:
+      bayonet:
+        name: Bayonet
+        whitelist:
+          tags:
+          - Knife
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+      bayonet: !type:ContainerSlot

@@ -1,0 +1,28 @@
+- type: entity
+  name: H2 gas miner
+  parent: GasMinerBase
+  id: GasMinerHydrogen
+  suffix: Shuttle, 300kPa
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasMiner
+      spawnGas: Hydrogen
+
+- type: entity
+  name: H2 gas miner
+  parent: GasMinerHydrogen
+  id: GasMinerHydrogenStation
+  suffix: Station, 1000kPa
+  components:
+    - type: GasMiner
+      maxExternalPressure: 1000
+
+- type: entity
+  name: H2 gas miner
+  parent: GasMinerHydrogen
+  id: GasMinerHydrogenStationLarge
+  suffix: Large Station, 4500kPa
+  components:
+    - type: GasMiner
+      maxExternalPressure: 4500

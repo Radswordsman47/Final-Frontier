@@ -1,0 +1,274 @@
+## Weapons
+- type: listing
+  id: UplinkCoalitionG988
+  name: uplink-coalition-g988-name
+  description: uplink-coalition-g988-desc
+  productEntity: WeaponRevolverCoalition
+  cost:
+    CoalitionMilitaryCredit: 25
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+- type: listing
+  id: UplinkCoalitionHammer
+  name:  uplink-security-hammer-name
+  description: uplink-security-hammer-desc
+  productEntity: SecBreachingHammer
+  icon: { sprite: Nyanotrasen/Objects/Weapons/Melee/breaching_hammer.rsi, state: icon }
+  cost:
+    CoalitionMilitaryCredit: 10
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+- type: listing
+  id: UplinkCoalitionEmitter
+  name:  uplink-security-emitter-name
+  description: uplink-security-emitter-desc
+  productEntity: WeaponEmpEmitter
+  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/emp.rsi, state: icon }
+  cost:
+    CoalitionMilitaryCredit: 10 #Mono Emmiter price: From 1 to 3
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+
+- type: listing
+  id: UplinkCoalitionEnforcer
+  name:  uplink-security-enforcer-name
+  description: uplink-security-enforcer-desc
+  productEntity: WeaponShotgunEnforcer
+  icon: { sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi, state: icon }
+  cost:
+    CoalitionMilitaryCredit: 10
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+- type: listing
+  id: UplinkCoalitionVulcan
+  name:  uplink-security-vulcan-name
+  description: uplink-security-vulcan-desc
+  productEntity: WeaponRifleVulcan
+  icon: { sprite: _DV/Objects/Weapons/Guns/Rifles/vulcan.rsi, state: icon }
+  cost:
+    CoalitionMilitaryCredit: 10
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+## Gear
+          
+- type: listing
+  id: UplinkCoalitionHeavyModsuit
+  name: uplink-coalition-heavy-modsuit-name
+  description: uplink-coalition-heavy-modsuit-desc
+  productEntity: ClothingModsuitCoalitionHeavyPowerCell
+  cost:
+    CoalitionMilitaryCredit: 40
+  categories:
+    - UplinkSecurityHardsuits
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+- type: listing
+  id: UplinkCoalitionJetpack
+  name: uplink-coalition-jetpack-name
+  description: uplink-coalition-jetpack-desc
+  productEntity: JetpackBlackFilled
+  icon: { sprite: _NF/Objects/Tanks/Jetpacks/nfsd.rsi, state: icon }
+  cost:
+    CoalitionMilitaryCredit: 5
+  categories:
+    - UplinkSecurityUtility
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+- type: listing
+  id: UplinkCoalitionCompactDefibrillator
+  name:  uplink-security-compact-defibrillator-name
+  description: uplink-security-compact-defibrillator-desc
+  productEntity: DefibrillatorCompact
+  cost:
+    CoalitionMilitaryCredit: 15
+  categories:
+    - UplinkSecurityUtility
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+
+- type: listing
+  id: UplinkCoalitionSyringeCaseFilled
+  name:  uplink-security-syringe-case-name
+  description: uplink-security-syringe-case-desc
+  productEntity: SyringeCaseAltFilled
+  cost:
+    CoalitionMilitaryCredit: 30
+  categories:
+    - UplinkSecurityUtility
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+## Ammo
+          
+- type: listing
+  id: UplinkCoalition762x51mmMagazine
+  name:  uplink-security-7-62x51mmMagazine-name
+  description: uplink-security-7-62x51mmMagazine-desc
+  productEntity: BoxMagazine762x51mmFMJ
+  icon: { sprite: Objects/Storage/boxes.rsi, state: box }
+  cost:
+    CoalitionMilitaryCredit: 5
+  categories:
+    - UplinkSecurityAmmo
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+## Grenades
+
+- type: listing
+  id: UplinkCoalitionSmokeGrenadeBox
+  name:  uplink-security-smokegrenade-box-name
+  description: uplink-security-smokegrenade-box-desc
+  productEntity: BoxSmokeGrenades
+  icon: { sprite: Objects/Weapons/Grenades/smoke.rsi, state: icon}
+  cost:
+    CoalitionMilitaryCredit: 5
+  categories:
+    - UplinkSecurityExplosives # Moved to Explosives - Mono
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+          
+- type: listing
+  id: UplinkCoalitionStingerGrenadeBox
+  name:  uplink-security-stingergrenade-box-name
+  description: uplink-security-stingergrenade-box-desc
+  productEntity: BoxStingerGrenadesNfsd
+  icon: { sprite: Objects/Weapons/Grenades/stingergrenade.rsi, state: icon}
+  cost:
+    CoalitionMilitaryCredit: 10
+  categories:
+    - UplinkSecurityExplosives # Moved to Explosives - Mono
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+
+- type: listing
+  id: UplinkCoalitionEmpGrenadeBox
+  name:  uplink-security-empgrenade-box-name
+  description: uplink-security-empgrenade-box-desc
+  productEntity: BoxEMPGrenadesNfsd
+  icon: { sprite: Objects/Weapons/Grenades/empgrenade.rsi, state: icon}
+  cost:
+    CoalitionMilitaryCredit: 10
+  categories:
+    - UplinkSecurityExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+
+- type: listing
+  id: UplinkCoalitionExplosiveGrenadeBox
+  name:  uplink-security-explosivegrenade-box-name
+  description: uplink-security-explosivegrenade-box-desc
+  productEntity: BoxExplosiveGrenadesNfsd
+  icon: { sprite: Objects/Weapons/Grenades/grenade.rsi, state: icon}
+  cost:
+    CoalitionMilitaryCredit: 15
+  categories:
+    - UplinkSecurityExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+
+- type: listing
+  id: UplinkCoalitionIncendiaryGrenadeBox
+  name:  uplink-security-incendiarygrenade-box-name
+  description: uplink-security-incendiarygrenade-box-desc
+  productEntity: BoxIncendiaryGrenadesNfsd
+  icon: { sprite: Objects/Weapons/Grenades/pyrogrenade.rsi, state: icon}
+  cost:
+    CoalitionMilitaryCredit: 10 # Mono 3->2
+  categories:
+    - UplinkSecurityExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+
+- type: listing
+  id: UplinkCoalitionShrapnelGrenadeBox
+  name:  uplink-security-shrapnelgrenade-box-name
+  description: uplink-security-shrapnelgrenade-box-desc
+  productEntity: BoxShrapnelGrenadesNfsd
+  icon: { sprite: Objects/Weapons/Grenades/shrapnelgrenade.rsi, state: icon}
+  cost:
+    CoalitionMilitaryCredit: 10
+  categories:
+    - UplinkSecurityExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink
+
+- type: listing
+  id: UplinkCoalitionBreachingChargesBox
+  name:  uplink-security-breachingcharge-box-name
+  description: uplink-security-breachingcharge-box-desc
+  productEntity: BoxBreachingCharges
+  icon: { sprite: _DV/Objects/Weapons/Bombs/breaching.rsi, state: icon}
+  cost:
+    CoalitionMilitaryCredit: 15
+  categories:
+    - UplinkSecurityExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - CoalitionUplink

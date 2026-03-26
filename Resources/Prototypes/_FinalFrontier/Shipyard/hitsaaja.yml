@@ -1,0 +1,38 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+- type: vessel
+  id: Hitsaaja
+  parent: BaseVessel
+  name: DWI Hitsaaja
+  description: Equipped with a basic engineering suite, hydrogen thrusters and an Apollo mining laser, this ship is fit for many salvage operations and repair jobs.
+  price: 72000
+  category: small
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/hitsaaja.yml
+  guidebookPage: Null
+  class:
+  - Engineering
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Hitsaaja
+  mapName: 'DWI Hitsaaja'
+  mapPath: /Maps/_FinalFrontier/Shuttles/hitsaaja.yml
+  minPlayers: 0
+  stations:
+    Hitsaaja:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Hitsaaja CIV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

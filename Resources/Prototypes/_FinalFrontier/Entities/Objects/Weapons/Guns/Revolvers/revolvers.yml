@@ -1,0 +1,102 @@
+- type: entity
+  name: N2881 Navy Revolver (7.62x39mm)
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverNavy
+  description: A modernized version of an ancient terran design. Uses 7.62x39mm ammo.
+  components:
+  - type: Sprite
+    scale: 1, 1
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Revolvers/navy_revolver.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Revolvers/navy_revolver.rsi
+  - type: Gun
+    fireRate: 3
+    resetOnHandSelected: false
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 9
+    angle: 0
+    wideAnimationRotation: -135
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - Cartridge762x39mmFMJ
+        - SpeedLoader762x39mmFMJ
+    capacity: 6
+    proto: Cartridge762x39mmFMJ
+    chambers: [ True, True, True, True, True, True]
+    ammoSlots: [ null, null, null, null, null, null]
+  - type: StaticPrice
+    price: 200
+    vendPrice: 3000
+    
+- type: entity
+  name: G988 marksmans heavy revolver
+  parent: BaseItem
+  id: WeaponRevolverCoalition
+  description: The Grant 988, developed by the Coalition to pierce into armor and ricochet within, tearing opponents apart.
+  components:
+  - type: WieldedCrosshair
+    rsi:
+      sprite: _RMC14/Interface/MousePointer/pistol_mouse.rsi
+      state: all
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Tag
+    tags:
+    - Sidearm
+  - type: Sprite
+    scale: 1, 1
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Revolvers/grant_988.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Revolvers/grant_988.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
+  - type: Gun
+    fireRate: 1
+    resetOnHandSelected: false
+    projectileSpeed: 45
+    minAngle: 0
+    maxAngle: 0
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 9
+    angle: 0
+    wideAnimationRotation: -135
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: BasicEntityAmmoProvider
+    proto: BulletCoalitionBolt
+    capacity: 8
+    count: 8
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2 # Mono
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_open.ogg
+  - type: AmmoCounter
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: StaticPrice
+    price: 200
+    vendPrice: 3000

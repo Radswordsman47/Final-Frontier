@@ -1,0 +1,14 @@
+- type: technology
+  id: HardlightTechnology
+  name: research-technology-hardlight-technology
+  entityIcon: HardlightSpear
+  discipline: Arsenal
+  tier: 3
+  cost: 75000
+  recipeUnlocks:
+  - HardlightSpearRecipe
+  - HardlightShieldRecipe
+  - HardlightShieldGeneratorRecipe
+  technologyPrerequisites:
+  - PortableMicrofusionWeaponry
+  position: 5, 3

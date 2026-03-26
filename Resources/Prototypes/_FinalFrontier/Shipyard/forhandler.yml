@@ -1,0 +1,41 @@
+# Author Info
+# GitHub: dunetemplar
+# Discord: dunetemplar
+
+# Shuttle Notes: RAAAGH ARMS DEALING!!
+
+- type: vessel
+  id: Forhandler
+  parent: BaseVessel
+  name: DWI Forhandler
+  description: One of Dornan-Weryl Industrial's many manufacturing vessels, this one being notably equipped with more gas centrifuges and ammunition presses. Has an Industrial tag.
+  price: 110000
+  category: medium
+  group: Shipyard
+  shuttlePath: /Maps/_FinalFrontier/Shuttles/forhandler.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  - Salvage
+  engine:
+  - AME
+
+- type: gameMap
+  id: Forhandler
+  mapName: 'DWI Forhandler'
+  mapPath: /Maps/_FinalFrontier/Shuttles/forhandler.yml
+  minPlayers: 0
+  stations:
+    Forhandler:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Forhandler IND{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]
