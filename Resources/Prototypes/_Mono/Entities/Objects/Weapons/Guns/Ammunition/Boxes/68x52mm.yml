@@ -12,6 +12,8 @@
     capacity: 80
   - type: Item
     size: Small
+    shape:
+    - 0,0,1,1
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
@@ -88,8 +90,7 @@
   suffix: Big
   components:
   - type: Item
-    shape:
-    - 0,0,1,1
+    size: Huge
   - type: BallisticAmmoProvider
     capacity: 200
     proto: Cartridge68x52mmCaseless

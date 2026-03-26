@@ -170,8 +170,7 @@
   suffix: Big
   components:
   - type: Item
-    shape:
-    - 0,0,1,1
+    size: Huge
   - type: BallisticAmmoProvider
     capacity: 210 # 7 rifle mags
     proto: Cartridge556x45mmFMJ

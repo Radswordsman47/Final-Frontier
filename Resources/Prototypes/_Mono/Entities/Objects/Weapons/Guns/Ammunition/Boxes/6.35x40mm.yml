@@ -69,8 +69,7 @@
   suffix: Big
   components:
   - type: Item
-    shape:
-    - 0,0,1,1
+    size: Huge
   - type: BallisticAmmoProvider
     capacity: 200
     proto: Cartridge635x40mmCaselessRubber
@@ -111,8 +110,7 @@
   suffix: Big
   components:
   - type: Item
-    shape:
-    - 0,0,1,1
+    size: Huge
   - type: BallisticAmmoProvider
     capacity: 200
     proto: Cartridge635x40mmCaseless

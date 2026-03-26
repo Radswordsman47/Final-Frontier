@@ -1,4 +1,4 @@
-- type: entity
+- type: entity     # Final Frontier: yeah none of this is used and it just throws an error due to rsi. just leave it for now. - Dune
   parent: BaseFlora
   id: FloraDesertCactus
   name: cactus

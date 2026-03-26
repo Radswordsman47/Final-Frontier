@@ -584,6 +584,8 @@
 - type: latheRecipePack
   id: StaticAmmoRecipePack
   recipes:
+  
+  - AmmoBoxUniversalBig # Final Frontier
 #FMJ recipes
 
   - AmmoBox23x75mmBuckshot
