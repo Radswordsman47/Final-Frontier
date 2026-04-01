@@ -38,8 +38,8 @@ public sealed class StationRadioReceiverSystem : EntitySystem
 
     private void OnMediaPlayed(EntityUid uid, StationRadioReceiverComponent comp, StationRadioMediaPlayedEvent args)
     {
-        var gain = comp.Active ? 3f : 0f;
-        var audio = _audio.PlayPredicted(args.MediaPlayed, uid, uid, AudioParams.Default.WithVolume(3f).WithMaxDistance(4.5f));
+        var gain = comp.Active ? 2f : 0f;
+        var audio = _audio.PlayPredicted(args.MediaPlayed, uid, uid, AudioParams.Default.WithVolume(2f).WithMaxDistance(12.5f));
         if (audio != null && _power.IsPowered(uid))
         {
             comp.SoundEntity = audio.Value.Entity;

@@ -43,7 +43,7 @@
 - type: entity
   id: ManufacturingAmmunitionPressIndustrial
   parent: [ BlueprintReceiverBase, BaseLatheLube ]
-  name: industrialammunition press
+  name: industrial ammunition press
   description: Allows for the creation of ammunition.
   components:
   - type: Machine

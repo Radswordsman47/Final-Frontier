@@ -212,7 +212,226 @@
   - type: Vinyl
     song:
       path: /Audio/_FinalFrontier/RadioStation/music/hektar.ogg
+      
+- type: entity
+  name: "vinyl disk: koganusan"
+  id: VinylDiskKoganusan
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Mono/Jukebox/koganusan.ogg
+      
+- type: entity
+  name: "vinyl disk: when day breaks"
+  id: VinylDisk001
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/Lobby/when_day_breaks.ogg
+      
+- type: entity
+  name: "vinyl disk: internal security department"
+  id: VinylDiskISD
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/Lobby/scp_isd.ogg
+      
+- type: entity
+  name: "vinyl disk: singularity"
+  id: VinylDiscSingularity
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/Lobby/bucsi_singularity.ogg
+      
+- type: entity
+  name: "vinyl disk: branches cycling"
+  id: VinylDiskBranchesCycling
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/branches_cycling.ogg
 
+- type: entity
+  name: "vinyl disk: denmark"
+  id: VinylDiskDenmark
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/denmark.ogg
+      
+- type: entity
+  name: "vinyl disk: desambrier"
+  id: VinylDiskDesambrier
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/desambrier.ogg
+      
+- type: entity
+  name: "vinyl disk: starless bethlehem"
+  id: VinylDiskStarlessBethlehem
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/starless_bethlehem.ogg
+
+- type: entity
+  name: "vinyl disk: wartrauma"
+  id: VinylDiskWartrauma
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/wartrauma.ogg
+
+- type: entity
+  name: "vinyl disk: extraterrestrial broadcast"
+  id: VinylDiskExtraterrestrialBroadcast
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/extraterrestrial_broadcast.ogg
+      
+- type: entity
+  name: "vinyl disk: embrace the abyss"
+  id: VinylDiskEmbraceTheAbyss
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/embrace_the_abyss.ogg
+      
+- type: entity
+  name: "vinyl disk: alien syndicate"
+  id: VinylDiskAlienSyndicate
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/alien_syndicate.ogg
+      
+- type: entity
+  name: "vinyl disk: marching upstream I"
+  id: VinylDiskMarchingUpstreamI
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/marching_upstream_I.ogg
+      
+- type: entity
+  name: "vinyl disk: space miner's song"
+  id: VinylDiskSpaceMinerSong
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/space_miners_song.ogg
+
+- type: entity
+  name: "vinyl disk: ballad for whales"
+  id: VinylDiskBalladForWhales
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/ballad_for_whales.ogg
+     
+- type: entity
+  name: "vinyl disk: explore the abyss"
+  id: VinylDiskExploreTheAbyss
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/explore_the_abyss.ogg
+      
+- type: entity
+  name: "vinyl disk: title3"
+  id: VinylDiskTintin
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/title3.ogg
+
+- type: entity
+  name: "vinyl disk: title3 remix"
+  id: VinylDiskTintinRemix
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/title3_remix.ogg
+
+- type: entity
+  name: "vinyl disk: title2"
+  id: VinylDiskRobocop
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/title2.ogg
+
+- type: entity
+  name: "vinyl disk: space asshole"
+  id: VinylDiskSpaceAsshole
+  parent: BaseVinylDisk
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_FinalFrontier/RadioStation/music/space_asshole.ogg
 
 # Sleeves
 

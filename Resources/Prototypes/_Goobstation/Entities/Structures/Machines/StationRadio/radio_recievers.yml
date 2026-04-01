@@ -41,6 +41,7 @@
     powerRequired: true
     speakNormally: true
     enabled: true
+    outputChatType: Speak
     channels:
     - RadioShow
   - type: Speech

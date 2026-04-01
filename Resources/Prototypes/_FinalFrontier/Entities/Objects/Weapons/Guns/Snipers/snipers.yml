@@ -5,10 +5,12 @@
   description: A lightweight sniper rifle. Uses 762x54mmR ammo.
   components:
   - type: Sprite
-    sprite: _FinalFrontier/Objects/Weapons/Guns/Snipers/lfd_m55.rsi
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Snipers/lfd_m55.rsi/icon.rsi
   - type: Clothing
     sprite: _FinalFrontier/Objects/Weapons/Guns/Snipers/lfd_m55.rsi
   - type: GunRequiresWield
+  - type: Item
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Snipers/lfd_m55.rsi
   - type: Gun
     fireRate: 1.5
     selectedMode: SemiAuto
