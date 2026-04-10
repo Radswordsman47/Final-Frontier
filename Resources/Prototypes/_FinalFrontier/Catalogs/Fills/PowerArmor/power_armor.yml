@@ -1,0 +1,83 @@
+- type: entity
+  id: SpawnPowerArmorFrameT11
+  parent: BasePowerArmorFrame
+  suffix: Filled, T11, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      Chestplate: !type:AllSelector
+        children:
+        - id: PowerArmorChestplateKolmer
+          prob: 0.35
+      RightArm: !type:AllSelector
+        children:
+        - id: PowerArmorRightArmKolmer
+          prob: 0.4
+      LeftArm: !type:AllSelector
+        children:
+        - id: PowerArmorLeftArmKolmer
+          prob: 0.4
+      RightLeg: !type:AllSelector
+        children:
+        - id: PowerArmorRightLegKolmer
+          prob: 0.4
+      LeftLeg: !type:AllSelector
+        children:
+        - id: PowerArmorLeftLegKolmer
+          prob: 0.4
+          
+- type: entity
+  id: SpawnPowerArmorFrameMK1
+  parent: BasePowerArmorFrame
+  suffix: Filled, Mk1, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      Chestplate: !type:AllSelector
+        children:
+        - id: PowerArmorChestplateMK1
+          prob: 0.25
+      RightArm: !type:AllSelector
+        children:
+        - id: PowerArmorRightArmMK1
+          prob: 0.3
+      LeftArm: !type:AllSelector
+        children:
+        - id: PowerArmorLeftArmMK1
+          prob: 0.3
+      RightLeg: !type:AllSelector
+        children:
+        - id: PowerArmorRightLegMK1
+          prob: 0.3
+      LeftLeg: !type:AllSelector
+        children:
+        - id: PowerArmorLeftLegMK1
+          prob: 0.3
+          
+- type: entity
+  id: SpawnPowerArmorFrameDM10
+  parent: BasePowerArmorFrame
+  suffix: Filled, DM10, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      Chestplate: !type:AllSelector
+        children:
+        - id: PowerArmorChestplateDM10
+          prob: 0.35
+      RightArm: !type:AllSelector
+        children:
+        - id: PowerArmorRightArmDM10
+          prob: 0.45
+      LeftArm: !type:AllSelector
+        children:
+        - id: PowerArmorLeftArmDM10
+          prob: 0.45
+      RightLeg: !type:AllSelector
+        children:
+        - id: PowerArmorRightLegDM10
+          prob: 0.45
+      LeftLeg: !type:AllSelector
+        children:
+        - id: PowerArmorLeftLegDM10
+          prob: 0.45

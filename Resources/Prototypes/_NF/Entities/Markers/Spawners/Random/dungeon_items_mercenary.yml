@@ -375,7 +375,7 @@
     - LockerSyndicatePersonal
     # - LockerSyndicatePersonalFilled # Less Syndicate Loot
     - SpawnDungeonLootSuitStorageUnitsMercenary
-    rareChance: 0.05
+    rareChance: 0.25 # Final Frontier 0.05>0.25
 
 - type: entity
   name: random suit storage unit
@@ -399,11 +399,14 @@
     - SuitStoragePrivateSecurity
     - SuitStorageEVAMercenary
     - SuitStorageEVAPrivateSec
+    - SuitStorageScaf # Final Frontier
     chance: 1
     offset: 0.0
     rarePrototypes:
-    - SuitStorageScaf
-    rareChance: 0.1
+    - SpawnPowerArmorFrameT11 # Final Frontier 
+    - SpawnPowerArmorFrameMK1 # Final Frontier
+    - SpawnPowerArmorFrameDM10 # Final Frontier
+    rareChance: 0.2 # Final Frontier 0.05>0.2
 
 - type: entity
   name: random crate

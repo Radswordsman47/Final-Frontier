@@ -184,13 +184,14 @@
     - SuitStorageSalv
     - SuitStorageEVACargo
     - SuitStorageEVASalvage
+    - SuitStorageMining # Final Frontier
+    - SuitStorageQuartermaster # Final Frontier
     chance: 1
     offset: 0.0
     rarePrototypes:
     - SuitStorageNTSRA
-    - SuitStorageMining
-    - SuitStorageQuartermaster
-    rareChance: 0.05
+    - SpawnPowerArmorFrameDM10 # Final Frontier
+    rareChance: 0.15 # Final Frontier 0.05>0.15
 
 # Machines
 - type: entity

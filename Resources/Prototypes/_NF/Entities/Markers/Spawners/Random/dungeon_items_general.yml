@@ -175,15 +175,18 @@
     - SuitStorageEngi
     - SuitStorageAtmos
     - SuitStorageSalv
+    - SuitStorageQuartermaster # Final Frontier 
+    - SuitStorageNTSRA # Final Frontier 
+    - SuitStorageMining # Final Frontier 
     chance: 1
     offset: 0.0
     rarePrototypes:
-    - SuitStorageNTSRA
-    - SuitStorageMining
     - SuitStorageCE
-    - SuitStorageQuartermaster
     - SuitStorageCMO
-    rareChance: 0.05
+    - SpawnPowerArmorFrameT11 # Final Frontier 
+    - SpawnPowerArmorFrameMK1 # Final Frontier
+    - SpawnPowerArmorFrameDM10 # Final Frontier
+    rareChance: 0.15 # Final Frontier 0.05>0.15
 
 - type: entity
   name: random locker

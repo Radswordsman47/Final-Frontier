@@ -6,6 +6,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Content.Server._Mono.Planets;
 
 namespace Content.Server._Mono.Radar;
 
@@ -68,7 +69,7 @@ public sealed partial class RadarBlipSystem : EntitySystem
 
     private void AssembleBlipsReport(EntityUid uid, List<EntityUid> sources, RadarConsoleComponent? component = null)
     {
-        if (!TryComp<PhysicsComponent>(uid, out _) || TryComp<MapGridComponent>(uid, out _) || !Resolve(uid, ref component))
+        if (TryComp<MapGridComponent>(uid, out _) || TryComp<PlanetMapComponent>(uid, out _)|| !TryComp<PhysicsComponent>(uid, out _) || !Resolve(uid, ref component))
             return;
 
         var radarXform = Transform(uid);

@@ -321,7 +321,59 @@
         whitelist:
           tags:
           - PowerArmorLeftArm
-      
+          
+- type: entity
+  id: DM10PowerArmorFrame
+  parent: BasePowerArmorFrame
+  name: power armor frame
+  components:
+  - type: ItemSlots
+    slots:
+      Chestplate:
+        name: Chestplate
+        startingItem: PowerArmorChestplateDM10
+        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 1
+        whitelist:
+          tags:
+          - PowerArmorChestplate
+      RightLeg:
+        name: Right Leg
+        startingItem: PowerArmorRightLegDM10
+        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 1
+        whitelist:
+          tags:
+          - PowerArmorRightLeg
+      LeftLeg:
+        name: Left Leg
+        startingItem: PowerArmorLeftLegDM10
+        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 1
+        whitelist:
+          tags:
+          - PowerArmorLeftLeg
+      RightArm:
+        name: Right Arm
+        startingItem: PowerArmorRightArmDM10
+        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 1
+        whitelist:
+          tags:
+          - PowerArmorRightArm
+      LeftArm:
+        name: Left Arm
+        startingItem: PowerArmorLeftArmDM10
+        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 1
+        whitelist:
+          tags:
+          - PowerArmorLeftArm
       
 # Test pieces
 
@@ -590,9 +642,9 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
         
 # Mk.1 power armor
 
@@ -744,6 +796,158 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.85
+
+# DM-10 power armor
+
+- type: entity
+  id: PowerArmorChestplateDM10
+  parent: BasePowerArmorChestplate
+  name: DM-10 power armor chestplate
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _FinalFrontier/Clothing/PowerArmor/Chestplates/dm10.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - PowerArmorChestplate
+  - type: PowerArmorPiece
+    path: _FinalFrontier/Clothing/PowerArmor/Chestplates/dm10.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.35
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.25
+        Caustic: 0.25
+        Shock: 0.5
+        Radiation: 0.25
+    
+- type: entity
+  id: PowerArmorRightArmDM10
+  parent: BasePowerArmorRightArm
+  name: DM-10 power armor right arm
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _FinalFrontier/Clothing/PowerArmor/RightArms/dm10.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - PowerArmorRightArm
+  - type: PowerArmorPiece
+    path: _FinalFrontier/Clothing/PowerArmor/RightArms/dm10.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
         Slash: 0.8
         Piercing: 0.8
+        Heat: 0.3
+        Caustic: 0.7
+        Radiation: 0.5
+    
+- type: entity
+  id: PowerArmorLeftArmDM10
+  parent: BasePowerArmorLeftArm
+  name: DM-10 power armor left arm
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _FinalFrontier/Clothing/PowerArmor/LeftArms/dm10.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - PowerArmorLeftArm
+  - type: PowerArmorPiece
+    path: _FinalFrontier/Clothing/PowerArmor/LeftArms/dm10.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.3
+        Caustic: 0.7
+        Radiation: 0.5
+    
+- type: entity
+  id: PowerArmorRightLegDM10
+  parent: BasePowerArmorRightLeg
+  name: DM-10 power armor right leg
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _FinalFrontier/Clothing/PowerArmor/RightLegs/dm10.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - PowerArmorRightLeg
+  - type: PowerArmorPiece
+    path: _FinalFrontier/Clothing/PowerArmor/RightLegs/dm10.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.3
+        Caustic: 0.7
+        Radiation: 0.5
+    
+- type: entity
+  id: PowerArmorLeftLegDM10
+  parent: BasePowerArmorLeftLeg
+  name: DM-10 power armor left leg
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _FinalFrontier/Clothing/PowerArmor/LeftLegs/dm10.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - PowerArmorLeftLeg
+  - type: PowerArmorPiece
+    path: _FinalFrontier/Clothing/PowerArmor/LeftLegs/dm10.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.3
+        Caustic: 0.7
+        Radiation: 0.5
+      
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetPowerArmorDM10
+  name: DM-10 power armor helmet
+  components:
+  - type: BreathMask
+  - type: Item
+    size: Normal
+  - type: FlashImmunity
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: _FinalFrontier/Clothing/Head/PowerArmor/dm10.rsi
+  - type: Clothing
+    sprite: _FinalFrontier/Clothing/Head/PowerArmor/dm10.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
