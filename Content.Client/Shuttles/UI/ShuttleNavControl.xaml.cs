@@ -336,6 +336,14 @@ public partial class ShuttleNavControl : BaseShuttleControl // Mono
         // Frontier Corvax: north line drawing
         var rot = ourEntRot + _rotation.Value;
         DrawNorthLine(handle, rot);
+		
+		// Mono
+        DrawAzimuthScale(handle, rot);
+
+        if (rot != Angle.Zero)
+        {
+            DrawCompassOverlay(handle, ourEntRot);
+        }
 
         // Draw our grid in detail
         var ourGridId = xform.GridUid;

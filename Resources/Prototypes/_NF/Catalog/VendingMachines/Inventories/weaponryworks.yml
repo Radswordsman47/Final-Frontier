@@ -66,15 +66,15 @@
   emaggedInventory:
     WeaponPistolViper: 1
 
-- type: vendingMachineInventory # Mono - this entire thing is mono
+- type: vendingMachineInventory
   id: WeaponryWorksVendPOIMercInventory
   startingInventory:
 # Rifles
     WeaponRifleVulcanFCMC: 4294967295
     WeaponRiflePrometheus: 4294967295
-    WeaponHenryRepeater: 4294967295
+    WeaponHenryRepeater: 4294967295 # Final Frontier
     WeaponSniperRepeater: 4294967295
-    WeaponRevolverNavy: 4294967295
+    WeaponRevolverNavy: 4294967295  # Final Frontier
     WeaponRifleNovaliteC1: 4294967295
     WeaponRifleGestio: 4294967295
     # WeaponSubMachineGunC20rPMC: 4294967295
@@ -96,6 +96,7 @@
 # Energy
     # WeaponLaserCannonPMC: 4294967295
     WeaponLaserCarbine: 4294967295
+    WeaponAutoLaserRifle: 4294967295
     WeaponEnergyGunPMC: 4294967295
     WeaponDisablerSMGPMC: 4294967295
 # Sidearms

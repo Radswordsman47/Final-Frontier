@@ -242,20 +242,22 @@
   description: This modified laser rifle fires nearly harmless beams in the 40-watt range, for target practice.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Battery/laser_rifle.rsi/icon.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: Item
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Battery/laser_rifle.rsi
   - type: MagazineVisuals
     magState: mag
     steps: 5
     zeroVisible: false
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+    sprite: _FinalFrontier/Objects/Weapons/Guns/Battery/laser_rifle.rsi
     quickEquip: false
     slots:
     - Back
@@ -264,6 +266,8 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+    soundGunshot:
+      path: /Audio/_FinalFrontier/Weapons/Guns/Gunshots/laser1.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
     fireCost: 35 #Mono: 62.5 >> 35
