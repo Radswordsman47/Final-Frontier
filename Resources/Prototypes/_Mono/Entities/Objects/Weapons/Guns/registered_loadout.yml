@@ -79,3 +79,13 @@
   parent: [WeaponLoadoutRegisteredBase, WeaponRifleMR3C]
   id: WeaponRifleMR3CRegistered
   suffix: Registered
+
+- type: entity
+  parent: [WeaponLoadoutRegisteredBase, WeaponRifleM90]
+  id: WeaponRifleM90Registered
+  suffix: Registered
+
+- type: entity
+  parent: [WeaponLoadoutRegisteredBase, WeaponShotgunBulldog]
+  id: WeaponShotgunBulldogRegistered
+  suffix: Registered

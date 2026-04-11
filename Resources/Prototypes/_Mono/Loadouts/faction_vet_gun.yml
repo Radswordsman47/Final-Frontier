@@ -19,6 +19,8 @@
   - ContractorSpecialGunAnaconda
   - ContractorSpecialGunMla73
   - ContractorSpecialGunWspr
+  - ContractorSpecialGunM90
+  - ContractorSpecialBulldog
   # Civ playtime guns
   - ContractorSpecialGunSmartSMG
   - ContractorSpecialGunMla34
@@ -149,6 +151,26 @@
   price: 40000
   inhand:
   - WeaponCaseWsprRegistered
+
+- type: loadout
+  id: ContractorSpecialGunM90
+  name: PA M-90 gun case
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MonoCivRogueDefector
+  price: 35000
+  inhand:
+  - WeaponCaseM90Registered
+
+- type: loadout
+  id: ContractorSpecialBulldog
+  name: PA M-12 Bulldog gun case
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MonoCivRogueDefector
+  price: 42500
+  inhand:
+  - WeaponCaseBulldogRegistered
 
 # Misc playtime weapons
 
