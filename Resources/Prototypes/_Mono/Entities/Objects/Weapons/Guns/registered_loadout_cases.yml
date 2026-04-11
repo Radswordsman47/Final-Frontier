@@ -181,3 +181,27 @@
       amount: 1
     - id: Magazine8x65mmSKR
       amount: 2
+
+- type: entity
+  parent: WeaponCaseLong
+  id: WeaponCaseM90Registered
+  suffix: Loadout, PA M-90
+  components:
+    - type: StorageFill
+      contents:
+      - id: WeaponRifleM90Registered
+        amount: 1
+      - id: Magazine762x51mmFMJ
+        amount: 2
+
+- type: entity
+  parent: WeaponCaseLong
+  id: WeaponCaseBulldogRegistered
+  suffix: Loadout, PA M-12 Bulldog
+  components:
+    - type: StorageFill
+      contents:
+      - id: WeaponShotgunBulldogRegistered
+        amount: 1
+      - id: Magazine12_gaugeBuckshot
+        amount: 2
